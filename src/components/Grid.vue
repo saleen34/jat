@@ -50,7 +50,7 @@ export default {
   watch: {
     toggleCats(val) {
       for (let i = 0; i < 6; i++) {
-        setTimeout(() => this.cats[i].show = val, 2000 * i);
+        setTimeout(() => this.cats[i].show = val, 1000 * i);
       }
     },
   },
