@@ -1,63 +1,45 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
+    <v-app-bar app color="blue" dark>
+      <v-btn @click="startIntro">
+        <span class="mr-2">Intro</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+      <v-btn @click="showCategories = !showCategories">
+        <span class="mr-2">Show Categories</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
-    <v-main>
-      <HelloWorld/>
-      <Grid/>
+    <v-main v-if="introOver">
+      <Score />
+      <Grid :toggleCats="showCategories" />
     </v-main>
   </v-app>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
-import Grid from './components/Grid';
+import Score from "./components/Score";
+import Grid from "./components/Grid";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    // HelloWorld,
+    Score,
     Grid,
   },
-
+  methods: {
+    startIntro() {
+      this.introOver = true;
+    },
+  },
   data: () => ({
-    //
+    showCategories: false,
+    introOver: false,
+    links: {
+      intro: "https://youtu.be/_WbMdH51AqU",
+    },
   }),
 };
 </script>
