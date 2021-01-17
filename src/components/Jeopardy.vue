@@ -29,7 +29,7 @@
 import AnswerText from "./AnswerText";
 
 export default {
-  name: "Grid",
+  name: "Jeopardy",
   components: {
     AnswerText,
   },

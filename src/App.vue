@@ -2,18 +2,18 @@
   <v-app>
     <v-app-bar app color="blue" dark v-if="introFinished">
       <v-btn @click="displayCategories">
-        <span class="mr-2">Show Categories</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
-    <YouTube
+    <!-- <YouTube
       v-show="!introFinished"
       :id="yt.intro.id"
       :vars="yt.intro.vars"
       @ended="introEnded"
     >
-    </YouTube>
+    </YouTube> -->
+
     <audio
       ref="categoryAudio"
       src="@/assets/audio/categories.mp3"
@@ -23,27 +23,26 @@
 
     <v-main v-if="introFinished">
       <Score />
-      <Grid :toggleCats="categoriesAreVisible" />
+      <Jeopardy :toggleCats="categoriesAreVisible" />
     </v-main>
   </v-app>
 </template>
 
 <script>
 import Score from "./components/Score";
-import Grid from "./components/Grid";
-import YouTube from "./components/YouTube";
+import Jeopardy from "./components/Jeopardy";
+// import YouTube from "./components/YouTube";
 
 export default {
   name: "App",
 
   components: {
     Score,
-    Grid,
-    YouTube,
+    Jeopardy,
+    // YouTube,
   },
   methods: {
     introEnded() {
-      console.log("intro ended");
       let frames = document.getElementsByTagName("iframe");
       for (let i = 0; i < frames.length; ++i) {
         frames[i].remove();
@@ -57,7 +56,7 @@ export default {
   },
   data: () => ({
     categoriesAreVisible: false,
-    introFinished: false,
+    introFinished: true,
     yt: {
       intro: {
         id: "njPzMyRGq9c",
