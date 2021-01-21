@@ -50,40 +50,16 @@ Birthday Girl
 
 Courtney Love
 
-
-
-
-Hold your tongue
-Apple
-Witch
-Luck
-Ship
-
+-------------------- JEOPARDY ROUND --------------------
 
 Potent potables
 Tequila Sunrise
 Bloody Mary
 Mojito
 French 76
-211
 Zima
 Adios, Motherfucker
-
-FAMOUS TITIES
-Dolly Parton
-Pamela Anderson
-Kate Upton
-Kim Kardashian
-Jennifer Lawrence
-Heather Graham
-
-"Bored" Games
-Tittkywinks
-Phase 10
-Egyptian Rat Screw
-Pinochle
-Risk
-Monopoly
+211
 
 Sports
 Muggsy Bogues
@@ -102,20 +78,86 @@ Suede
 Twill
 Velvet
 
-Candy
+Hold your tongue
+Apple
+Witch
+Luck
+Ship
+Glass
+Hits
 
-The Casino
-House advantage
-According to basic blackjack strategy, which of these should you always split? Aces
-At the craps table, betting on this side can be a lonely and sometimes hostile experience. Dark
+FAMOUS TITIES
+Dolly Parton
+Pamela Anderson
+Kate Upton
+Kim Kardashian
+Jennifer Lawrence
+Heather Graham
+
+40th Potpourri
+Courtney Love
+Cort Furniture
+Basketball Court
+Supreme Court
+Courtney Cox
+Kitchen and Bath brand
+
+
+-------------------- DOUBLE JEOPARDY ROUND --------------------
+
+
+Piles of shit
+Mosquitoes
+Hitler
+Bill Lumberg
+Biff Tannen
+Cartman
+Joffrey Baratheon
+
+Dirty Acronyms
+dtf down to fuck
+bj blow job
+q2c quick to come
+lkitr little kid in the room
+ipn I'm posting naked
+fwb friends with benefits
+
+Movie Quotes: Name the movie title. Bonus for character name
+You're breaking up with me because I'm too... blonde? Elle woods legally blonde
+Shooter McGavin: You're in big trouble though, pal. I eat pieces of shit like you for breakfast!
+You had me at hello Jerry mcguire
+On Wednesdays we wear pink. Karen Smith from Means Girls
+There's no crying in baseball! A league of their own. Jimmy Duggin
+It's a lock! I hit my 7-iron like John Daly hits the 3 Roy Tin Cup
+
+Reversing Entropy? Nearly Impossible
+Sneeze with Your Eyes Open
+Tickle Yourself
+Moving faster than the speed of light
+Not pop Bubble wrap
+Put the toothpaste in, once you take the paste out.
+Reaching for the extra toilet paper roll
+Duvet cover
+Using the applying the decimal system
 
 Drugs
-This chemical in cannabis that makes you feel “high” (THC)
+This chemical in cannabis is what makes you feel “high” (THC)
 Marketed as a legal cough suppressant in the late 1800s, this narcotic goes by the street name smack (Heroin)
 This hallucinogen was recently decriminalized in Oregon, and may be beneficial in treating mental heath issues (Psilocybin)
 I believe I can fly... well some people think they can on this drug (PCP)
 This drug is often considered the drug of choice within the rave culture and is also used at clubs, festivals, and house parties (MDMA)
 A dissociative drug used as an anesthetic in veterinary practices (Ketamine)
+
+"Bored" Games
+Tittkywinks
+Phase 10
+Egyptian Rat Screw
+Pinochle
+Risk
+Monopoly
+
+
+--------------------------------------------------------------------------------------------------------------
 
 Final Jeopardy
 

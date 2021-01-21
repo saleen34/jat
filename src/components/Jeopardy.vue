@@ -1,8 +1,11 @@
 <template>
   <div>
-    <v-container>
+    <v-container class="answerText noselect">
       <v-row>
-        <v-col v-for="cat in cats" :key="cat.id">
+        <v-col
+          v-for="cat in cats" :key="cat.id"
+          @click="expandCat(cat)"
+        >
           <v-card class="pa-2" v-if="cat.show">
             {{ cat.name }}
           </v-card>
@@ -17,21 +20,28 @@
             :value="cats[catIndex].id"
             :answer="cats[catIndex].answers[answerIndex].text"
             :state="cats[catIndex].answers[answerIndex].state"
-            @click.native="setSelected(catIndex, answerIndex)"
+            @click.native="expandAnswer(catIndex, answerIndex)"
           >
           </AnswerText>
         </v-col>
       </v-row>
     </v-container>
+    <Overlay
+      :value="largeCard.value"
+      :dialog="largeCard.show"
+    >
+    </Overlay>
   </div>
 </template>
 <script>
 import AnswerText from "./AnswerText";
+import Overlay from "./Overlay";
 
 export default {
   name: "Jeopardy",
   components: {
     AnswerText,
+    Overlay,
   },
   methods: {
     setSelected(catIndex, answerIndex) {
@@ -43,6 +53,14 @@ export default {
         this.cats[catIndex].answers[answerIndex].state = "value";
       }
     },
+    expandCat(cat) {
+      this.largeCard.value = cat.name;
+      this.largeCard.show = true;
+    },
+    expandAnswer(catIndex, answerIndex) {
+      this.largeCard.value = this.cats[catIndex].answers[answerIndex].text;
+      this.largeCard.show = true;
+    },
   },
   props: {
     toggleCats: Boolean,
@@ -50,11 +68,15 @@ export default {
   watch: {
     toggleCats(val) {
       for (let i = 0; i < 6; i++) {
-        setTimeout(() => this.cats[i].show = val, 1000 * i);
+        setTimeout(() => (this.cats[i].show = val), 1000 * i);
       }
     },
   },
   data: () => ({
+    largeCard: {
+      value: "",
+      show: false,
+    },
     cats: [
       {
         id: 100,
@@ -246,3 +268,17 @@ export default {
   }),
 };
 </script>
+<style lang="css" scoped>
+.answerText {
+    cursor: pointer;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+</style>
