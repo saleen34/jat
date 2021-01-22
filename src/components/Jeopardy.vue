@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container class="answerText noselect">
+    <v-container v-show="!showDailyDouble" class="answerText noselect">
       dd: {{ dailyDouble }}
       <v-row>
         <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
@@ -26,7 +26,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-container v-for="(n, answerIndex) in 6" :key="answerIndex">
+    <v-container v-show="!showDailyDouble" v-for="(n, answerIndex) in 6" :key="answerIndex">
       <v-row>
         <v-col v-for="(j, catIndex) in 6" :key="catIndex">
           <AnswerText
@@ -40,26 +40,26 @@
       </v-row>
     </v-container>
     <Overlay :value="largeCard.value" :dialog="largeCard.show"></Overlay>
-    <!-- <YouTube
+    <YouTube
       v-show="showDailyDouble"
       :id="yt.dd.id"
       :vars="yt.dd.vars"
       @ended="ddEnded"
     >
-    </YouTube> -->
+    </YouTube>
   </div>
 </template>
 <script>
 import AnswerText from "./AnswerText";
 import Overlay from "./Overlay";
-// import YouTube from "./YouTube";
+import YouTube from "./YouTube";
 
 export default {
   name: "Jeopardy",
   components: {
     AnswerText,
     Overlay,
-    // YouTube,
+    YouTube,
   },
   methods: {
     setSelected(catIndex, answerIndex) {
@@ -117,8 +117,8 @@ export default {
     },
   },
   created: function () {
-    // this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
-    this.dailyDouble.when = 2;
+    this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
+    // this.dailyDouble.when = 2;
   },
   data: () => ({
     showDailyDouble: false,
