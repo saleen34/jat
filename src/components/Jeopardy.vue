@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-container class="answerText noselect">
+      dd: {{ dailyDouble }}
       <v-row>
         <v-col
           v-for="cat in cats" :key="cat.id"
@@ -17,7 +18,7 @@
       <v-row>
         <v-col v-for="(j, catIndex) in 6" :key="catIndex">
           <AnswerText
-            :value="cats[catIndex].id"
+            :value="cats[answerIndex].id"
             :answer="cats[catIndex].answers[answerIndex].text"
             :state="cats[catIndex].answers[answerIndex].state"
             @click.native="expandAnswer(catIndex, answerIndex)"
@@ -60,6 +61,20 @@ export default {
     expandAnswer(catIndex, answerIndex) {
       this.largeCard.value = this.cats[catIndex].answers[answerIndex].text;
       this.largeCard.show = true;
+
+      if (this.cats[catIndex].answers[answerIndex].state !== "blank") {
+        this.checkDailyDouble();
+      }
+
+      this.cats[catIndex].answers[answerIndex].state = "blank";
+    },
+    checkDailyDouble() {
+      this.dailyDouble.counter++;
+      if (!this.dailyDouble.done && (this.dailyDouble.counter === this.dailyDouble.when)) {
+        this.dailyDouble.done = true;
+
+        // show daily double
+      }
     },
   },
   props: {
@@ -72,7 +87,15 @@ export default {
       }
     },
   },
+  created: function() {
+    this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
+  },
   data: () => ({
+    dailyDouble: {
+      counter: 0,
+      when: -1000,
+      done: false,
+    },
     largeCard: {
       value: "",
       show: false,
