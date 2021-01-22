@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-dialog fullscreen v-model="dialog" class="dialog">
+    <v-dialog fullscreen :value="dialog" @input="$emit('input')" class="dialog">
       <v-card align="center" justify="center">
         {{ value }}
       </v-card>

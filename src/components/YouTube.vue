@@ -1,10 +1,9 @@
 <template>
   <youtube
     :video-id="id"
-    ref="youtube"
+    player-width="100%"
+    player-height="1024"
     :player-vars="vars"
-    :fitParent="true"
-    :resize="true"
     @ended="ended"
   ></youtube>
 </template>
@@ -17,8 +16,8 @@ export default {
   },
   methods: {
     ended() {
-      this.$emit('ended');
-    }
+      this.$emit("ended");
+    },
   },
 };
 </script>

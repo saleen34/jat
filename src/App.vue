@@ -1,21 +1,20 @@
 <template>
   <v-app>
-    <v-app-bar app color="blue" dark v-if="introFinished">
-      <v-btn @click="displayCategories">
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+    <v-app-bar app color="blue" dark src="@/assets/header.jpeg">
+      <v-avatar @click="displayCategories">
+        <img src="@/assets/tf.webp" />
+      </v-avatar>
       <v-spacer />
       <v-toolbar-title class="white--text">JP</v-toolbar-title>
       <v-spacer />
     </v-app-bar>
 
-    <!-- <YouTube
-      v-show="!introFinished"
+    <YouTube
+      v-show="introRunning"
       :id="yt.intro.id"
       :vars="yt.intro.vars"
       @ended="introEnded"
-    >
-    </YouTube> -->
+    ></YouTube>
 
     <audio
       ref="categoryAudio"
@@ -24,7 +23,7 @@
       muted
     ></audio>
 
-    <v-main v-if="introFinished">
+    <v-main v-show="!introRunning">
       <Score />
       <Jeopardy :toggleCats="categoriesAreVisible" />
     </v-main>
@@ -34,7 +33,7 @@
 <script>
 import Score from "./components/Score";
 import Jeopardy from "./components/Jeopardy";
-// import YouTube from "./components/YouTube";
+import YouTube from "./components/YouTube";
 
 export default {
   name: "App",
@@ -42,15 +41,11 @@ export default {
   components: {
     Score,
     Jeopardy,
-    // YouTube,
+    YouTube,
   },
   methods: {
     introEnded() {
-      let frames = document.getElementsByTagName("iframe");
-      for (let i = 0; i < frames.length; ++i) {
-        frames[i].remove();
-      }
-      this.introFinished = true;
+      this.introRunning = false;
     },
     displayCategories() {
       this.categoriesAreVisible = true;
@@ -59,7 +54,7 @@ export default {
   },
   data: () => ({
     categoriesAreVisible: false,
-    introFinished: true,
+    introRunning: false,
     yt: {
       intro: {
         id: "njPzMyRGq9c",
@@ -70,13 +65,12 @@ export default {
       },
     },
   }),
+  mounted: function () {
+    this.introRunning = true;
+  },
 };
 </script>
 <style lang="css">
-iframe {
-  width: 100%;
-  max-width: 650px; /* Also helpful. Optional. */
-}
 .theme--light.v-application {
   font-family: Jeopardy !important;
   font-size: 30px;
@@ -86,5 +80,8 @@ iframe {
 @font-face {
   font-family: "Jeopardy";
   src: url("/assets/gyparody.fft") format("ttf");
+}
+.v-avatar {
+  cursor: pointer;
 }
 </style>

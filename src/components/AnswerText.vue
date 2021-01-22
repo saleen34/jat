@@ -18,7 +18,7 @@
       >
         {{ answer }}
       </v-card>
-      <v-card v-if="state == 'blank'" class="pa-2 blank">-</v-card>
+      <v-card v-if="state == 'blank'" class="pa-2 blank"></v-card>
     </v-container>
   </div>
 </template>

@@ -4,10 +4,25 @@
       dd: {{ dailyDouble }}
       <v-row>
         <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
-          <v-card class="pa-2" v-if="cat.show" align="center" justify="center" outlined>
+          <v-card
+            class="pa-2"
+            v-if="cat.show"
+            align="center"
+            justify="center"
+            outlined
+          >
             {{ cat.name }}
           </v-card>
-          <v-card class="pa-2 blank" v-if="!cat.show" align="center" justify="center" outlined>-</v-card>
+          <v-card
+            class="mx-auto"
+            max-width="150"
+            v-if="!cat.show"
+            align="center"
+            justify="center"
+            outlined
+          >
+            <v-img src="@/assets/cat.jpeg" />
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -24,18 +39,27 @@
         </v-col>
       </v-row>
     </v-container>
-    <Overlay :value="largeCard.value" :dialog="largeCard.show"> </Overlay>
+    <Overlay :value="largeCard.value" :dialog="largeCard.show"></Overlay>
+    <!-- <YouTube
+      v-show="showDailyDouble"
+      :id="yt.dd.id"
+      :vars="yt.dd.vars"
+      @ended="ddEnded"
+    >
+    </YouTube> -->
   </div>
 </template>
 <script>
 import AnswerText from "./AnswerText";
 import Overlay from "./Overlay";
+// import YouTube from "./YouTube";
 
 export default {
   name: "Jeopardy",
   components: {
     AnswerText,
     Overlay,
+    // YouTube,
   },
   methods: {
     setSelected(catIndex, answerIndex) {
@@ -52,14 +76,15 @@ export default {
       this.largeCard.show = true;
     },
     expandAnswer(catIndex, answerIndex) {
-      this.largeCard.value = this.cats[catIndex].answers[answerIndex].text;
-      this.largeCard.show = true;
-
-      if (this.cats[catIndex].answers[answerIndex].state !== "blank") {
-        this.checkDailyDouble();
-      }
-
+      let didDD = false;
       this.cats[catIndex].answers[answerIndex].state = "blank";
+
+      didDD = this.checkDailyDouble();
+
+      if (!didDD) {
+        this.largeCard.value = this.cats[catIndex].answers[answerIndex].text;
+        this.largeCard.show = true;
+      }
     },
     checkDailyDouble() {
       this.dailyDouble.counter++;
@@ -67,10 +92,18 @@ export default {
         !this.dailyDouble.done &&
         this.dailyDouble.counter === this.dailyDouble.when
       ) {
-        this.dailyDouble.done = true;
-
-        // show daily double
+        this.showDailyDouble = true;
+        return true;
       }
+      return false;
+    },
+    ddEnded() {
+      let frames = document.getElementsByTagName("iframe");
+      for (let i = 0; i < frames.length; ++i) {
+        frames[i].remove();
+      }
+      this.showDailyDouble = false;
+      this.dailyDouble.done;
     },
   },
   props: {
@@ -84,9 +117,20 @@ export default {
     },
   },
   created: function () {
-    this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
+    // this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
+    this.dailyDouble.when = 2;
   },
   data: () => ({
+    showDailyDouble: false,
+    yt: {
+      dd: {
+        id: "njPzMyRGq9c",
+        vars: {
+          autoplay: 1,
+          controls: 1,
+        },
+      },
+    },
     dailyDouble: {
       counter: 0,
       when: -1000,
