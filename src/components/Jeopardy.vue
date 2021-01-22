@@ -3,14 +3,11 @@
     <v-container class="answerText noselect">
       dd: {{ dailyDouble }}
       <v-row>
-        <v-col
-          v-for="cat in cats" :key="cat.id"
-          @click="expandCat(cat)"
-        >
-          <v-card class="pa-2" v-if="cat.show">
+        <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
+          <v-card class="pa-2" v-if="cat.show" align="center" justify="center" outlined>
             {{ cat.name }}
           </v-card>
-          <v-card class="pa-2" v-if="!cat.show"> BLANK </v-card>
+          <v-card class="pa-2 blank" v-if="!cat.show" align="center" justify="center" outlined>-</v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -27,11 +24,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <Overlay
-      :value="largeCard.value"
-      :dialog="largeCard.show"
-    >
-    </Overlay>
+    <Overlay :value="largeCard.value" :dialog="largeCard.show"> </Overlay>
   </div>
 </template>
 <script>
@@ -70,7 +63,10 @@ export default {
     },
     checkDailyDouble() {
       this.dailyDouble.counter++;
-      if (!this.dailyDouble.done && (this.dailyDouble.counter === this.dailyDouble.when)) {
+      if (
+        !this.dailyDouble.done &&
+        this.dailyDouble.counter === this.dailyDouble.when
+      ) {
         this.dailyDouble.done = true;
 
         // show daily double
@@ -87,7 +83,7 @@ export default {
       }
     },
   },
-  created: function() {
+  created: function () {
     this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
   },
   data: () => ({
@@ -292,16 +288,26 @@ export default {
 };
 </script>
 <style lang="css" scoped>
+.theme--light.v-card {
+  background-color: #060ce9;
+  color: #ffcc00;
+}
 .answerText {
-    cursor: pointer;
+  cursor: pointer;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+.theme--light.v-sheet--outlined {
+  border: 3px solid black !important;
+}
+.theme--light.v-card.blank {
+  color: #060ce9;
 }
 </style>

@@ -4,6 +4,9 @@
       <v-btn @click="displayCategories">
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
+      <v-spacer />
+      <v-toolbar-title class="white--text">JP</v-toolbar-title>
+      <v-spacer />
     </v-app-bar>
 
     <!-- <YouTube
@@ -69,9 +72,19 @@ export default {
   }),
 };
 </script>
-<style lang="css" scoped>
+<style lang="css">
 iframe {
   width: 100%;
   max-width: 650px; /* Also helpful. Optional. */
+}
+.theme--light.v-application {
+  font-family: Jeopardy !important;
+  font-size: 30px;
+  background-color: #060ce9 !important;
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "Jeopardy";
+  src: url("/assets/gyparody.fft") format("ttf");
 }
 </style>
