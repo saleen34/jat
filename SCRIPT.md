@@ -53,13 +53,13 @@ Courtney Love
 -------------------- JEOPARDY ROUND --------------------
 
 Potent potables
-Tequila Sunrise
-Bloody Mary
-Mojito
-French 76
-Zima
-Adios, Motherfucker
-211
+Tequila Sunrise - This cocktail contains tequila, orange juice, and grenadine, and was created by Bobby Lozoff and Billy Rice in the early 1970s.
+Bloody Mary - French bartender Fernand Petiot claimed to have invented this cocktail in 1921, originally referred to as a "Bucket of blood"
+Mojito - When preparing this, fresh lime juice is added to simple syrup, mint leaves then muddled.
+French 75
+Zima - This lemon-lime drink was part of the "clear craze" of the 1990s that produced products such as Crystal Pepsi and Tab Clear.
+Adios, Motherfucker - A cousin to the long island iced tea,  this colorful drink is one of the strongest cocktails you can drink. Hasta la vista, baby.
+211 - Coming in at 8.1% AVB, this 40-ounce imbibe comes in both Black and Silver labels.
 
 Sports
 Muggsy Bogues

@@ -161,31 +161,31 @@ export default {
       {
         id: 100,
         show: false,
-        name: "C1",
+        name: "Potent Potables",
         answers: [
           {
             state: "value",
-            text: "c1_one_ans",
+            text: "This cocktail contains tequila, orange juice, and grenadine, and was created by Bobby Lozoff and Billy Rice in the early 1970s.",
           },
           {
             state: "value",
-            text: "c1_two_ans",
+            text: "French bartender Fernand Petiot claimed to have invented this cocktail in 1921, originally referred to as a \"Bucket of blood\"",
           },
           {
             state: "value",
-            text: "c1_three_ans",
+            text: "When preparing this, fresh lime juice is added to simple syrup, mint leaves then muddled.",
           },
           {
             state: "value",
-            text: "c1_four_ans",
+            text: "This lemon-lime drink was part of the \"clear craze\" of the 1990s that produced products such as Crystal Pepsi and Tab Clear.",
           },
           {
             state: "value",
-            text: "c1_five_ans",
+            text: "A cousin to the long island iced tea,  this colorful drink is one of the strongest cocktails you can drink. Hasta la vista, baby.",
           },
           {
             state: "value",
-            text: "c1_six_ans",
+            text: "Coming in at 8.1% AVB, this 40-ounce imbibe comes in both Black and Silver labels.",
           },
         ],
       },
