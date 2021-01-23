@@ -49,12 +49,20 @@
       :text="largeCard.text"
     ></Overlay>
     <YouTube
-      v-show="showDailyDouble"
+      v-if="showDailyDouble"
       :id="yt.dd.id"
       :vars="yt.dd.vars"
       @ended="ddEnded"
     >
     </YouTube>
+
+    <audio
+      ref="dailyDoubleAudio"
+      src="@/assets/audio/dailydouble.mp3"
+      preload
+      muted
+    ></audio>
+
   </div>
 </template>
 <script>
@@ -70,9 +78,6 @@ export default {
     YouTube,
   },
   methods: {
-    closeOverlay() {
-      alert("close overlay");
-    },
     setSelected(catIndex, answerIndex) {
       if (this.cats[catIndex].answers[answerIndex].state === "value") {
         this.cats[catIndex].answers[answerIndex].state = "answer";
@@ -103,6 +108,7 @@ export default {
         !this.dailyDouble.done &&
         this.dailyDouble.counter === this.dailyDouble.when
       ) {
+        this.$refs.dailyDoubleAudio.play();
         this.showDailyDouble = true;
         return true;
       }
@@ -128,16 +134,16 @@ export default {
     },
   },
   created: function () {
-    this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
-    // this.dailyDouble.when = 2;
+    // this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
+    this.dailyDouble.when = 2;
   },
   data: () => ({
     showDailyDouble: false,
     yt: {
       dd: {
-        id: "njPzMyRGq9c",
+        id: "FEU2jg5AknE",
         vars: {
-          autoplay: 1,
+          autoplay: 0,
           controls: 1,
         },
       },
