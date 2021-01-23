@@ -9,12 +9,12 @@
       <v-spacer />
     </v-app-bar>
 
-    <YouTube
+    <!-- <YouTube
       v-show="introRunning"
       :id="yt.intro.id"
       :vars="yt.intro.vars"
       @ended="introEnded"
-    ></YouTube>
+    ></YouTube> -->
 
     <audio
       ref="categoryAudio"
@@ -33,7 +33,7 @@
 <script>
 import Score from "./components/Score";
 import Jeopardy from "./components/Jeopardy";
-import YouTube from "./components/YouTube";
+// import YouTube from "./components/YouTube";
 
 export default {
   name: "App",
@@ -41,7 +41,7 @@ export default {
   components: {
     Score,
     Jeopardy,
-    YouTube,
+    // YouTube,
   },
   methods: {
     introEnded() {
@@ -66,7 +66,7 @@ export default {
     },
   }),
   mounted: function () {
-    this.introRunning = true;
+    this.introRunning = false;
   },
 };
 </script>

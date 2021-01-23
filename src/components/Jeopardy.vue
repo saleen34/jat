@@ -26,7 +26,11 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-container v-show="!showDailyDouble" v-for="(n, answerIndex) in 6" :key="answerIndex">
+    <v-container
+      v-show="!showDailyDouble"
+      v-for="(n, answerIndex) in 6"
+      :key="answerIndex"
+    >
       <v-row>
         <v-col v-for="(j, catIndex) in 6" :key="catIndex">
           <AnswerText
@@ -39,7 +43,11 @@
         </v-col>
       </v-row>
     </v-container>
-    <Overlay :value="largeCard.value" :dialog="largeCard.show"></Overlay>
+    <Overlay
+      @close-dialog="largeCard.visible = false"
+      :visible="largeCard.visible"
+      :text="largeCard.text"
+    ></Overlay>
     <YouTube
       v-show="showDailyDouble"
       :id="yt.dd.id"
@@ -62,6 +70,9 @@ export default {
     YouTube,
   },
   methods: {
+    closeOverlay() {
+      alert("close overlay");
+    },
     setSelected(catIndex, answerIndex) {
       if (this.cats[catIndex].answers[answerIndex].state === "value") {
         this.cats[catIndex].answers[answerIndex].state = "answer";
@@ -72,8 +83,8 @@ export default {
       }
     },
     expandCat(cat) {
-      this.largeCard.value = cat.name;
-      this.largeCard.show = true;
+      this.largeCard.text = cat.name;
+      this.largeCard.visible = true;
     },
     expandAnswer(catIndex, answerIndex) {
       let didDD = false;
@@ -82,8 +93,8 @@ export default {
       didDD = this.checkDailyDouble();
 
       if (!didDD) {
-        this.largeCard.value = this.cats[catIndex].answers[answerIndex].text;
-        this.largeCard.show = true;
+        this.largeCard.text = this.cats[catIndex].answers[answerIndex].text;
+        this.largeCard.visible = true;
       }
     },
     checkDailyDouble() {
@@ -137,8 +148,8 @@ export default {
       done: false,
     },
     largeCard: {
-      value: "",
-      show: false,
+      text: "",
+      visible: false,
     },
     cats: [
       {
