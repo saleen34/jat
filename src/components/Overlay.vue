@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-dialog fullscreen v-model="dialog" class="dialog" @input="close">
+    <v-dialog v-model="dialog" class="dialog" @input="close" width="50%" pa-12>
       <v-card align="center" justify="center">
         {{ text }}
       </v-card>
@@ -39,6 +39,6 @@ export default {
 .theme--light.v-card {
   background-color: #060ce9;
   color: #ffcc00;
-  font-size: 90px;
+  font-size: 70px;
 }
 </style>

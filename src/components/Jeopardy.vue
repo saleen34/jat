@@ -5,7 +5,6 @@
       <v-row>
         <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
           <v-card
-            class="pa-2"
             v-if="cat.show"
             align="center"
             justify="center"
@@ -14,8 +13,7 @@
             {{ cat.name }}
           </v-card>
           <v-card
-            class="mx-auto"
-            max-width="150"
+            max-width="250"
             v-if="!cat.show"
             align="center"
             justify="center"
@@ -43,11 +41,13 @@
         </v-col>
       </v-row>
     </v-container>
+
     <Overlay
       @close-dialog="largeCard.visible = false"
       :visible="largeCard.visible"
       :text="largeCard.text"
     ></Overlay>
+
     <YouTube
       v-if="showDailyDouble"
       :id="yt.dd.id"
@@ -192,69 +192,69 @@ export default {
       {
         id: 200,
         show: false,
-        name: "C2",
+        name: "Sports",
         answers: [
           {
             state: "value",
-            text: "c2_one_ans",
+            text: "First-team All-ACC in 1987, this NBA player was the shortest to ever play coming in at 5 ft 3 in",
           },
           {
             state: "value",
-            text: "c2_two_ans",
+            text: "In 1994, this athlete became embroiled in controversy when her ex-husband orchestrated an attack on her fellow U.S. skating rival Nancy Kerrigan.",
           },
           {
             state: "value",
-            text: "c2_three_ans",
+            text: "Born in Portland, Oregon this MLB player played as an outfielder, catcher, and first baseman winning consecutive MVP's, 4 Slugger Awards and 5 Gold Gloves.",
           },
           {
             state: "value",
-            text: "c2_four_ans",
+            text: "Winning a gold medal at the 1964 Summer Olympics, this fighter was the first to beat Muhammad Ali.",
           },
           {
             state: "value",
-            text: "c2_five_ans",
+            text: "This running back in 2015, at the age of 30 became the oldest in NFL history to be named first-team All-Pro.",
           },
           {
             state: "value",
-            text: "c2_six_ans",
+            text: "This two-time Olympic gold medalist, and two-time FIFA Women's World Cup champion was hailed as a soccer icon, she played as a forward for the United States women's national soccer team from 1987 to 2004.",
           },
         ],
       },
       {
         id: 300,
         show: false,
-        name: "C3",
+        name: "Fabric",
         answers: [
           {
             state: "value",
-            text: "c3_one_ans",
+            text: "Types of this delicate fabric include Brussels & Chantilly",
           },
           {
             state: "value",
-            text: "c3_two_ans",
+            text: "This fiber obtained from goats has been used to make yarn, textiles and clothing for hundreds of years.",
           },
           {
             state: "value",
-            text: "c3_three_ans",
+            text: "A synthetic fiber known for its exceptional elasticity",
           },
           {
             state: "value",
-            text: "c3_four_ans",
+            text: "Made from the underside of the animal skin, which is softer and more pliable than, though not as durable as, the outer skin layer.",
           },
           {
             state: "value",
-            text: "c3_five_ans",
+            text: "A type of woven tufted fabric in which the cut threads are evenly distributed, with a short dense pile, giving it a distinctive soft feel.",
           },
           {
             state: "value",
-            text: "c3_six_ans",
+            text: "A type of textile weave with a pattern of diagonal parallel ribs. It is one of three fundamental types of textile weaves along with plain weave and satin.",
           },
         ],
       },
       {
         id: 400,
         show: false,
-        name: "C4",
+        name: "Hold your tongue",
         answers: [
           {
             state: "value",
@@ -285,62 +285,62 @@ export default {
       {
         id: 500,
         show: false,
-        name: "C5",
+        name: "FAMOUS TITIES",
         answers: [
           {
             state: "value",
-            text: "c5_one_ans",
+            text: "An American singer, songwriter, actress, author, businesswoman, and humanitarian, known primarily for he massive sweater melons.",
           },
           {
             state: "value",
-            text: "c5_two_ans",
+            text: "Donning tiggo bitties, she is best known for her numerous appearances in Playboy, her work on Home Improvement, Baywatch, and V.I.P.",
           },
           {
             state: "value",
-            text: "c5_three_ans",
+            text: "Meat dress, little monsters and huge Headlamps.",
           },
           {
             state: "value",
-            text: "c5_four_ans",
+            text: "An American media personality, socialite, and model she first gained media attention as a friend and stylist of Paris Hilton.",
           },
           {
             state: "value",
-            text: "c5_five_ans",
+            text: "Films she has acted in have grossed over $6 billion worldwide, and she was the world's highest-paid actress in 2015 and 2016. She shares initials with a former In Living Color dancer.",
           },
           {
             state: "value",
-            text: "c5_six_ans",
+            text: "Heather Graham and her \"twins\" where front and center as Roller Girl in this 1997 drama.",
           },
         ],
       },
       {
         id: 600,
         show: false,
-        name: "C6",
+        name: "40th Potpourri",
         answers: [
           {
             state: "value",
-            text: "c6_one_ans",
+            text: "She rose to prominence as the lead vocalist of the alternative rock band Hole, which she formed in 1989.",
           },
           {
             state: "value",
-            text: "c6_two_ans",
+            text: "This furniture outlet is located on SW Cascade Ave, Beaverton, OR",
           },
           {
             state: "value",
-            text: "c6_three_ans",
+            text: "A place to shoot hoops.",
           },
           {
             state: "value",
-            text: "c6_four_ans",
+            text: "Its the highest in the land.",
           },
           {
             state: "value",
-            text: "c6_five_ans",
+            text: "She gained recognition for her starring role as Monica on the NBC sitcom Friends.",
           },
           {
             state: "value",
-            text: "c6_six_ans",
+            text: "A surname of German origin. The name was first found in Saxony. It means, \"charcoal burner\".",
           },
         ],
       },
