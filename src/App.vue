@@ -4,9 +4,11 @@
       <v-avatar @click="displayCategories">
         <img src="@/assets/tf.webp" />
       </v-avatar>
+      <v-spacer/>
       <v-avatar @click="startDoubleJeopardy">
         <img src="@/assets/dd.png" />
       </v-avatar>
+      <v-spacer/>
       <v-avatar @click="startTimer">
         <img src="@/assets/timer.jpg" />
       </v-avatar>
