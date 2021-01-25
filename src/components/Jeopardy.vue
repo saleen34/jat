@@ -9,17 +9,17 @@
             align="center"
             justify="center"
             outlined
+            min-height="175px"
           >
             {{ cat.name }}
           </v-card>
           <v-card
-            max-width="250"
             v-if="!cat.show"
             align="center"
             justify="center"
             outlined
           >
-            <v-img src="@/assets/cat.jpeg" />
+            <v-img src="@/assets/jeopardy.jpg" />
           </v-card>
         </v-col>
       </v-row>

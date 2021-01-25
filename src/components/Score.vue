@@ -1,19 +1,15 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-col>
+      <v-col class="scores">
         <v-icon @click="blueUp" color="green"> mdi-arrow-up </v-icon>
         <v-icon @click="blueDown" color="red"> mdi-arrow-down </v-icon>
-      </v-col>
-      <v-col>
         Blue:
         {{ blueScore }}
       </v-col>
-      <v-col>
+      <v-col class="scores">
         <v-icon @click="pinkUp" color="green"> mdi-arrow-up </v-icon>
         <v-icon @click="pinkDown" color="red"> mdi-arrow-down </v-icon>
-      </v-col>
-      <v-col>
         Pink:
         {{ pinkScore }}
       </v-col>
@@ -44,3 +40,9 @@ export default {
   },
 };
 </script>
+<style lang="css" scoped>
+.scores {
+  background-color: #060ce9;
+  color: #ffcc00;
+}
+</style>

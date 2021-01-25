@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-dialog v-model="dialog" class="dialog" @input="close" width="50%" pa-12>
-      <v-card align="center" justify="center">
+    <v-dialog v-model="dialog" class="dialog" @input="close" width="75%">
+      <v-card align="center" justify="center" class="pa-12">
         {{ text }}
       </v-card>
     </v-dialog>

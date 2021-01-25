@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="blue" dark src="@/assets/header.jpeg">
+    <v-app-bar app color="#060ce9">
       <v-avatar @click="displayCategories">
         <img src="@/assets/tf.webp" />
       </v-avatar>
@@ -10,9 +10,6 @@
       <v-avatar @click="startTimer">
         <img src="@/assets/timer.jpg" />
       </v-avatar>
-      <v-spacer />
-      <v-toolbar-title class="white--text">JP</v-toolbar-title>
-      <v-spacer />
     </v-app-bar>
 
     <!-- <YouTube

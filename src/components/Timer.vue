@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-col>
+      <v-col class="timer">
         <vue-countdown-timer
           @start_callback="timerStarted"
           @end_callback="timerEnded"
@@ -46,8 +46,11 @@ export default {
       this.$emit("timerDone");
     },
   },
-  // updated: function () {
-  //   this.myStartTime = Date.now();
-  // },
 };
 </script>
+<style lang="css" scoped>
+.timer {
+  background-color: #060ce9;
+  color: #ffcc00;
+}
+</style>
