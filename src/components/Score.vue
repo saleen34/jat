@@ -24,7 +24,6 @@
 <script>
 export default {
   name: "Score",
-
   data: () => ({
     blueScore: 0,
     pinkScore: 0,

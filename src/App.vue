@@ -4,17 +4,23 @@
       <v-avatar @click="displayCategories">
         <img src="@/assets/tf.webp" />
       </v-avatar>
+      <v-avatar @click="startDoubleJeopardy">
+        <img src="@/assets/dd.png" />
+      </v-avatar>
+      <v-avatar @click="startTimer">
+        <img src="@/assets/timer.jpg" />
+      </v-avatar>
       <v-spacer />
       <v-toolbar-title class="white--text">JP</v-toolbar-title>
       <v-spacer />
     </v-app-bar>
 
-    <YouTube
+    <!-- <YouTube
       v-show="introRunning"
       :id="yt.intro.id"
       :vars="yt.intro.vars"
       @ended="introEnded"
-    ></YouTube>
+    ></YouTube> -->
 
     <audio
       ref="categoryAudio"
@@ -24,16 +30,20 @@
     ></audio>
 
     <v-main v-show="!introRunning">
+      <Timer v-if="timer" :startTime="timerStartTime" />
       <Score />
-      <Jeopardy :toggleCats="categoriesAreVisible" />
+      <Jeopardy v-if="jeopardy" :toggleCats="categoriesAreVisible" />
+      <DoubleJeopardy v-if="doubleJeopardy" :toggleCats="true" />
     </v-main>
   </v-app>
 </template>
 
 <script>
 import Score from "./components/Score";
+import Timer from "./components/Timer";
 import Jeopardy from "./components/Jeopardy";
-import YouTube from "./components/YouTube";
+import DoubleJeopardy from "./components/DoubleJeopardy";
+// import YouTube from "./components/YouTube";
 
 export default {
   name: "App",
@@ -41,7 +51,9 @@ export default {
   components: {
     Score,
     Jeopardy,
-    YouTube,
+    DoubleJeopardy,
+    Timer,
+    // YouTube,
   },
   methods: {
     introEnded() {
@@ -51,10 +63,25 @@ export default {
       this.categoriesAreVisible = true;
       this.$refs.categoryAudio.play();
     },
+    startDoubleJeopardy() {
+      this.jeopardy = false;
+      this.doubleJeopardy = true;
+    },
+    startTimer() {
+      this.timerStartTime = Date.now();
+      this.timer = true;
+    },
+    timerEnded() {
+      this.timer = false;
+    },
   },
   data: () => ({
+    timer: false,
+    timerStartTime: null,
     categoriesAreVisible: false,
     introRunning: false,
+    jeopardy: true,
+    doubleJeopardy: false,
     yt: {
       intro: {
         id: "njPzMyRGq9c",
@@ -66,7 +93,16 @@ export default {
     },
   }),
   mounted: function () {
-    this.introRunning = true;
+    window.addEventListener(
+      "keypress",
+      function (e) {
+        console.log(e.keyCode);
+        if (e.keyCode === 116) {
+         this.startTimer();
+        }
+      }.bind(this)
+    );
+    this.introRunning = false;
   },
 };
 </script>

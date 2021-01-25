@@ -60,7 +60,7 @@ Bloody Mary - French bartender Fernand Petiot claimed to have invented this cock
 Mojito - When preparing this, fresh lime juice is added to simple syrup, mint leaves then muddled.
 French 75
 Zima - This lemon-lime drink was part of the "clear craze" of the 1990s that produced products such as Crystal Pepsi and Tab Clear.
-Adios, Motherfucker - A cousin to the long island iced tea,  this colorful drink is one of the strongest cocktails you can drink. Hasta la vista, baby.
+Adios, Motherfucker - A cousin to the long island iced tea, this colorful drink is one of the strongest cocktails you can consume. Hasta la vista, baby.
 211 - Coming in at 8.1% AVB, this 40-ounce imbibe comes in both Black and Silver labels.
 
 Sports

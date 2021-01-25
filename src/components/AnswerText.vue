@@ -3,7 +3,7 @@
     <v-container class="answerText noselect">
       <v-card
         v-if="state == 'value'"
-        class="pa-2"
+        class="pa-6"
         align="center"
         justify="center"
         outlined
@@ -12,7 +12,7 @@
       </v-card>
       <v-card
         v-if="state == 'answer'"
-        class="pa-2"
+        class="pa-6"
         align="center"
         justify="center"
       >

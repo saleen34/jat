@@ -4,7 +4,9 @@ import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 import VueYouTubeEmbed from "vue-youtube-embed";
+import VueCountdownTimer from "vuejs-countdown-timer";
 
+Vue.use(VueCountdownTimer);
 Vue.config.productionTip = false
 Vue.use(VueYouTubeEmbed);
 

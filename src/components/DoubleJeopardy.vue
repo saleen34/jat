@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-container v-show="!showDailyDouble" class="answerText noselect">
+      dd: {{ dailyDouble }}
       <v-row>
         <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
           <v-card
             v-if="cat.show"
-            class="pa-6"
             align="center"
             justify="center"
             outlined
@@ -71,7 +71,7 @@ import Overlay from "./Overlay";
 import YouTube from "./YouTube";
 
 export default {
-  name: "Jeopardy",
+  name: "DoubleJeopardy",
   components: {
     AnswerText,
     Overlay,
@@ -92,20 +92,27 @@ export default {
       this.largeCard.visible = true;
     },
     expandAnswer(catIndex, answerIndex) {
+      let didDD = false;
       this.cats[catIndex].answers[answerIndex].state = "blank";
 
-      if (this.cats[catIndex].answers[answerIndex].dd) {
-        this.doDailyDouble();
-      } {
+      didDD = this.checkDailyDouble();
+
+      if (!didDD) {
         this.largeCard.text = this.cats[catIndex].answers[answerIndex].text;
         this.largeCard.visible = true;
       }
     },
-    doDailyDouble() {
-      if (!this.dailyDouble.done) {
+    checkDailyDouble() {
+      this.dailyDouble.counter++;
+      if (
+        !this.dailyDouble.done &&
+        this.dailyDouble.counter === this.dailyDouble.when
+      ) {
         this.$refs.dailyDoubleAudio.play();
         this.showDailyDouble = true;
+        return true;
       }
+      return false;
     },
     ddEnded() {
       let frames = document.getElementsByTagName("iframe");
@@ -148,7 +155,6 @@ export default {
     },
     largeCard: {
       text: "",
-      dd: false,
       visible: false,
     },
     cats: [
@@ -159,33 +165,27 @@ export default {
         answers: [
           {
             state: "value",
-            text: "This cocktail contains tequila, orange juice, and grenadine, and was created in the early 1970s.",
-            dd: false,
+            text: "This cocktail contains tequila, orange juice, and grenadine, and was created by Bobby Lozoff and Billy Rice in the early 1970s.",
           },
           {
             state: "value",
-            text: "A French bartender is said to have invented this cocktail in 1921, originally referred to as a \"Bucket of blood\"",
-            dd: false,
+            text: "French bartender Fernand Petiot claimed to have invented this cocktail in 1921, originally referred to as a \"Bucket of blood\"",
           },
           {
             state: "value",
             text: "When preparing this, fresh lime juice is added to simple syrup, mint leaves then muddled.",
-            dd: false,
           },
           {
             state: "value",
             text: "This lemon-lime drink was part of the \"clear craze\" of the 1990s that produced products such as Crystal Pepsi and Tab Clear.",
-            dd: false,
           },
           {
             state: "value",
-            text: "",
-            dd: true,
+            text: "A cousin to the long island iced tea,  this colorful drink is one of the strongest cocktails you can drink. Hasta la vista, baby.",
           },
           {
             state: "value",
             text: "Coming in at 8.1% AVB, this 40-ounce imbibe comes in both Black and Silver labels.",
-            dd: false,
           },
         ],
       },
@@ -197,32 +197,26 @@ export default {
           {
             state: "value",
             text: "First-team All-ACC in 1987, this NBA player was the shortest to ever play coming in at 5 ft 3 in",
-            dd: false,
           },
           {
             state: "value",
-            text: "In 1994, this athlete became embroiled in controversy when her ex-husband orchestrated an attack against her skating rival Nancy Kerrigan.",
-            dd: false,
+            text: "In 1994, this athlete became embroiled in controversy when her ex-husband orchestrated an attack on her fellow U.S. skating rival Nancy Kerrigan.",
           },
           {
             state: "value",
-            text: "Born in Portland, Oregon #3 played as an outfielder, catcher, and first baseman winning consecutive MVP's, 4 Slugger Awards and 5 Gold Gloves.",
-            dd: false,
+            text: "Born in Portland, Oregon this MLB player played as an outfielder, catcher, and first baseman winning consecutive MVP's, 4 Slugger Awards and 5 Gold Gloves.",
           },
           {
             state: "value",
             text: "Winning a gold medal at the 1964 Summer Olympics, this fighter was the first to beat Muhammad Ali.",
-            dd: false,
           },
           {
             state: "value",
             text: "This running back in 2015, at the age of 30 became the oldest in NFL history to be named first-team All-Pro.",
-            dd: false,
           },
           {
             state: "value",
-            text: "This two-time Olympic gold medalist / FIFA Women's World Cup champion was hailed as a soccer icon, she played as a forward for the United States women's national soccer team from 1987 to 2004.",
-            dd: false,
+            text: "This two-time Olympic gold medalist, and two-time FIFA Women's World Cup champion was hailed as a soccer icon, she played as a forward for the United States women's national soccer team from 1987 to 2004.",
           },
         ],
       },
@@ -234,32 +228,26 @@ export default {
           {
             state: "value",
             text: "Types of this delicate fabric include Brussels & Chantilly",
-            dd: false,
           },
           {
             state: "value",
             text: "This fiber obtained from goats has been used to make yarn, textiles and clothing for hundreds of years.",
-            dd: false,
           },
           {
             state: "value",
             text: "A synthetic fiber known for its exceptional elasticity",
-            dd: false,
           },
           {
             state: "value",
-            text: "This material is made from the underside of the animal skin, which is softer and more pliable than, though not as durable as, the outer skin layer.",
-            dd: false,
+            text: "Made from the underside of the animal skin, which is softer and more pliable than, though not as durable as, the outer skin layer.",
           },
           {
             state: "value",
             text: "A type of woven tufted fabric in which the cut threads are evenly distributed, with a short dense pile, giving it a distinctive soft feel.",
-            dd: false,
           },
           {
             state: "value",
-            text: "A type of textile weave with a pattern of diagonal parallel ribs. It is one of three fundamental types of textile weaves along with plain and satin.",
-            dd: false,
+            text: "A type of textile weave with a pattern of diagonal parallel ribs. It is one of three fundamental types of textile weaves along with plain weave and satin.",
           },
         ],
       },
@@ -271,32 +259,26 @@ export default {
           {
             state: "value",
             text: "c4_one_ans",
-            dd: false,
           },
           {
             state: "value",
             text: "c4_two_ans",
-            dd: false,
           },
           {
             state: "value",
             text: "c4_three_ans",
-            dd: false,
           },
           {
             state: "value",
             text: "c4_four_ans",
-            dd: false,
           },
           {
             state: "value",
             text: "c4_five_ans",
-            dd: false,
           },
           {
             state: "value",
             text: "c4_six_ans",
-            dd: false,
           },
         ],
       },
@@ -307,33 +289,27 @@ export default {
         answers: [
           {
             state: "value",
-            text: "A famous American country singer, songwriter and actress she cannot be eclipsed by her massive sweater melons alone.",
-            dd: false,
+            text: "An American singer, songwriter, actress, author, businesswoman, and humanitarian, known primarily for he massive sweater melons.",
           },
           {
             state: "value",
             text: "Donning tiggo bitties, she is best known for her numerous appearances in Playboy, her work on Home Improvement, Baywatch, and V.I.P.",
-            dd: false,
           },
           {
             state: "value",
             text: "Meat dress, little monsters and huge Headlamps.",
-            dd: false,
           },
           {
             state: "value",
             text: "An American media personality, socialite, and model she first gained media attention as a friend and stylist of Paris Hilton.",
-            dd: false,
           },
           {
             state: "value",
             text: "Films she has acted in have grossed over $6 billion worldwide, and she was the world's highest-paid actress in 2015 and 2016. She shares initials with a former In Living Color dancer.",
-            dd: false,
           },
           {
             state: "value",
             text: "Heather Graham and her \"twins\" where front and center as Roller Girl in this 1997 drama.",
-            dd: false,
           },
         ],
       },
@@ -345,32 +321,26 @@ export default {
           {
             state: "value",
             text: "She rose to prominence as the lead vocalist of the alternative rock band Hole, which she formed in 1989.",
-            dd: false,
           },
           {
             state: "value",
             text: "This furniture outlet is located on SW Cascade Ave, Beaverton, OR",
-            dd: false,
           },
           {
             state: "value",
             text: "A place to shoot hoops.",
-            dd: false,
           },
           {
             state: "value",
             text: "Its the highest in the land.",
-            dd: false,
           },
           {
             state: "value",
             text: "She gained recognition for her starring role as Monica on the NBC sitcom Friends.",
-            dd: false,
           },
           {
             state: "value",
             text: "A surname of German origin. The name was first found in Saxony. It means, \"charcoal burner\".",
-            dd: false,
           },
         ],
       },
