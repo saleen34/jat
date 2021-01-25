@@ -110,12 +110,12 @@ Koehler - A surname of German origin. The name was first found in Saxony. It mea
 
 
 Piles of shit
-Mosquitoes
-Hitler
-Bill Lumberg
-Biff Tannen
-Cartman
-Joffrey Baratheon
+Mosquitoes - Spanish for \"little fly\" these insects carry diseases, feed on humans and really suck.
+Hitler - This pos aimed to eliminate Jews from Germany and establish a New Order.
+Bill Lumberg - "Milt, we're gonna need to go ahead and move you downstairs into storage B"
+Biff Tannen - This pile of shit, crashed into a manure truck while trying to run down Marty.
+Cartman - This beanie wearing animated shit head frequently says, \"Screw you guys, I'm going home!\"
+Joffrey Baratheon - This fictional giant asshole blamed his \"little\" hand for poisoning him.
 
 Dirty Acronyms
 dtf down to fuck
@@ -125,6 +125,15 @@ lkitr little kid in the room
 ipn I'm posting naked
 fwb friends with benefits
 
+Drugs
+This chemical in cannabis is what makes you feel “high” (THC)
+Marketed as a legal cough suppressant in the late 1800s, this narcotic goes by the street name smack (Heroin)
+This hallucinogen was recently decriminalized in Oregon, and may be beneficial in treating mental heath issues (Psilocybin)
+I believe I can fly... well some people think they can on this drug (PCP)
+This drug is often considered the drug of choice within the rave culture and is also used at clubs, festivals, and house parties (MDMA)
+A dissociative drug used as an anesthetic in veterinary practices (Ketamine)
+
+
 Movie Quotes: Name the movie title. Bonus for character name
 You're breaking up with me because I'm too... blonde? Elle woods legally blonde
 Shooter McGavin: You're in big trouble though, pal. I eat pieces of shit like you for breakfast!
@@ -132,6 +141,7 @@ You had me at hello Jerry mcguire
 On Wednesdays we wear pink. Karen Smith from Means Girls
 There's no crying in baseball! A league of their own. Jimmy Duggin
 It's a lock! I hit my 7-iron like John Daly hits the 3 Roy Tin Cup
+
 
 Reversing Entropy? Nearly Impossible
 Sneeze with Your Eyes Open
@@ -143,13 +153,6 @@ Reaching for the extra toilet paper roll
 Duvet cover
 Using the applying the decimal system
 
-Drugs
-This chemical in cannabis is what makes you feel “high” (THC)
-Marketed as a legal cough suppressant in the late 1800s, this narcotic goes by the street name smack (Heroin)
-This hallucinogen was recently decriminalized in Oregon, and may be beneficial in treating mental heath issues (Psilocybin)
-I believe I can fly... well some people think they can on this drug (PCP)
-This drug is often considered the drug of choice within the rave culture and is also used at clubs, festivals, and house parties (MDMA)
-A dissociative drug used as an anesthetic in veterinary practices (Ketamine)
 
 "Bored" Games
 Tittkywinks

@@ -148,41 +148,42 @@ export default {
       {
         id: 100,
         show: false,
-        name: "Potent Potables",
+        name: "Piles of shit",
         answers: [
           {
             state: "value",
             text:
-              "This cocktail contains tequila, orange juice, and grenadine, and was created in the early 1970s.",
+              'Spanish for "little fly" these insects carry diseases, feed on humans and really suck.',
             dd: false,
           },
           {
             state: "value",
             text:
-              'A French bartender is said to have invented this cocktail in 1921, originally referred to as a "Bucket of blood"',
+              "This pos aimed to eliminate Jews from Germany and establish a New Order.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "When preparing this, fresh lime juice is added to simple syrup, mint leaves then muddled.",
+              '"Milt, we\'re gonna need to go ahead and move you downstairs into storage B"',
             dd: false,
           },
           {
             state: "value",
             text:
-              'This lemon-lime drink was part of the "clear craze" of the 1990s that produced products such as Crystal Pepsi and Tab Clear.',
+              "This pile of shit, crashed into a manure truck while trying to run down Marty.",
             dd: false,
           },
           {
             state: "value",
-            text: "",
+            text:
+              'This beanie wearing animated shit head frequently says, "Screw you guys, I\'m going home!"',
             dd: true,
           },
           {
             state: "value",
             text:
-              "Coming in at 8.1% AVB, this 40-ounce imbibe comes in both Black and Silver labels.",
+              'This fictional giant asshole blamed his "little" hand for poisoning him.',
             dd: false,
           },
         ],
@@ -190,42 +191,36 @@ export default {
       {
         id: 200,
         show: false,
-        name: "Sports",
+        name: "Dirty Acronyms",
         answers: [
           {
             state: "value",
-            text:
-              "First-team All-ACC in 1987, this NBA player was the shortest to ever play coming in at 5 ft 3 in",
+            text: "dtf",
             dd: false,
           },
           {
             state: "value",
-            text:
-              "In 1994, this athlete became embroiled in controversy when her ex-husband orchestrated an attack against her skating rival Nancy Kerrigan.",
+            text: "bj",
             dd: false,
           },
           {
             state: "value",
-            text:
-              "Born in Portland, Oregon #3 played as an outfielder, catcher, and first baseman winning consecutive MVP's, 4 Slugger Awards and 5 Gold Gloves.",
+            text: "q2c",
             dd: false,
           },
           {
             state: "value",
-            text:
-              "Winning a gold medal at the 1964 Summer Olympics, this fighter was the first to beat Muhammad Ali.",
+            text: "fwb",
             dd: false,
           },
           {
             state: "value",
-            text:
-              "This running back in 2015, at the age of 30 became the oldest in NFL history to be named first-team All-Pro.",
+            text: "ipn",
             dd: false,
           },
           {
             state: "value",
-            text:
-              "This two-time Olympic gold medalist / FIFA Women's World Cup champion was hailed as a soccer icon, she played as a forward for the United States women's national soccer team from 1987 to 2004.",
+            text: "lkitr",
             dd: false,
           },
         ],
@@ -233,40 +228,41 @@ export default {
       {
         id: 300,
         show: false,
-        name: "Fabric",
+        name: "Drugs",
         answers: [
           {
             state: "value",
-            text: "Types of this delicate fabric include Brussels & Chantilly",
+            text: 'This chemical in cannabis is what makes you feel "high".',
             dd: false,
           },
           {
             state: "value",
             text:
-              "This fiber obtained from goats has been used to make yarn, textiles and clothing for hundreds of years.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text: "A synthetic fiber known for its exceptional elasticity",
+              "Marketed as a legal cough suppressant in the late 1800s, this narcotic goes by the street name smack.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "This material is made from the underside of the animal skin, which is softer and more pliable than, though not as durable as, the outer skin layer.",
+              "This hallucinogen was recently decriminalized in Oregon, and may be beneficial in treating mental health issues.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "A type of woven tufted fabric in which the cut threads are evenly distributed, with a short dense pile, giving it a distinctive soft feel.",
+              "I believe I can fly... well some people think they can on this drug.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "A type of textile weave with a pattern of diagonal parallel ribs. It is one of three fundamental types of textile weaves along with plain and satin.",
+              "This drug is often considered the drug of choice within the rave culture and is also used at clubs, festivals, and house parties.",
+            dd: false,
+          },
+          {
+            state: "value",
+            text:
+              "A dissociative drug used as an anesthetic in veterinary practices.",
             dd: false,
           },
         ],
@@ -274,36 +270,39 @@ export default {
       {
         id: 400,
         show: false,
-        name: "Hold your tongue",
+        name: "Name that movie",
         answers: [
           {
             state: "value",
-            text: "c4_one_ans",
+            text: "You're breaking up with me because I'm too... blonde?",
             dd: false,
           },
           {
             state: "value",
-            text: "c4_two_ans",
+            text:
+              "You're in big trouble though, pal. I eat pieces of shit like you for breakfast!",
             dd: false,
           },
           {
             state: "value",
-            text: "c4_three_ans",
+            text: "There's no crying in baseball!",
             dd: false,
           },
           {
             state: "value",
-            text: "c4_four_ans",
+            text:
+              "It rubs the lotion on its skin or else it gets the hose again.",
             dd: false,
           },
           {
             state: "value",
-            text: "c4_five_ans",
+            text: "It's a lock! I hit my 7-iron like John Daly hits the 3",
             dd: false,
           },
           {
             state: "value",
-            text: "c4_six_ans",
+            text:
+              "Nobody's trading with anybody. This ain't a goddamn, fucking city council meeting, you know? Now listen up, Mr. Pink. There's two ways you can go on this job: my way or the highway.",
             dd: false,
           },
         ],
@@ -311,41 +310,40 @@ export default {
       {
         id: 500,
         show: false,
-        name: "FAMOUS TITIES",
+        name: "Reversing entropy",
         answers: [
           {
             state: "value",
-            text:
-              "A famous American country singer, songwriter and actress she cannot be eclipsed by her massive sweater melons alone.",
+            text: "It's nearly impossible to do this when sneezing.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "Donning tiggo bitties, she is best known for her numerous appearances in Playboy, her work on Home Improvement, Baywatch, and V.I.P.",
+              "While most are vulnerable, doing this to yourself isn't laughable",
             dd: false,
           },
           {
             state: "value",
-            text: "Meat dress, little monsters and huge Headlamps.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
-              "An American media personality, socialite, and model she first gained media attention as a friend and stylist of Paris Hilton.",
+            text: "One out, this is nearly impossible to get back in.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "Films she has acted in have grossed over $6 billion worldwide, and she was the world's highest-paid actress in 2015 and 2016. She shares initials with a former In Living Color dancer.",
+              "This cover is nearly impossible to get back on",
             dd: false,
           },
           {
             state: "value",
             text:
-              'Heather Graham and her "twins" where front and center as Roller Girl in this 1997 drama.',
+              "When you run out of this, finding or reaching a backup role is nearly impossible.",
+            dd: false,
+          },
+          {
+            state: "value",
+            text:
+              'Popping this ',
             dd: false,
           },
         ],
@@ -353,40 +351,40 @@ export default {
       {
         id: 600,
         show: false,
-        name: "40th Potpourri",
+        name: "\"Bored\" Games",
         answers: [
           {
             state: "value",
             text:
-              "She rose to prominence as the lead vocalist of the alternative rock band Hole, which she formed in 1989.",
+              "Round and round we go, just don't land on a PP or BW.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "This furniture outlet is located on SW Cascade Ave, Beaverton, OR",
+              "They should think about phazing out this game.",
             dd: false,
           },
           {
             state: "value",
-            text: "A place to shoot hoops.",
+            text: "Impossible to spell and even harder to score. Trump!",
             dd: false,
           },
           {
             state: "value",
-            text: "Its the highest in the land.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
-              "She gained recognition for her starring role as Monica on the NBC sitcom Friends.",
+            text: "Take over the world... oops, lost an army!",
             dd: false,
           },
           {
             state: "value",
             text:
-              'A surname of German origin. The name was first found in Saxony. It means, "charcoal burner".',
+              "Flicking plastic disks into a target.",
+            dd: false,
+          },
+          {
+            state: "value",
+            text:
+              'Need an appetite to finish this blast from the past plastic ball collecting game',
             dd: false,
           },
         ],
