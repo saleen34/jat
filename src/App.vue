@@ -32,7 +32,7 @@
       <Timer v-if="timer" :startTime="timerStartTime" />
       <Score />
       <Jeopardy v-if="jeopardy" :toggleCats="categoriesAreVisible" />
-      <DoubleJeopardy v-if="doubleJeopardy" :toggleCats="true" />
+      <DoubleJeopardy v-if="doubleJeopardy" :toggleCats="dJCategoriesAreVisible" />
     </v-main>
   </v-app>
 </template>
@@ -59,7 +59,12 @@ export default {
       this.introRunning = false;
     },
     displayCategories() {
-      this.categoriesAreVisible = true;
+      if (this.jeopardy) {
+        this.categoriesAreVisible = true;
+      }
+      if (this.doubleJeopardy) {
+        this.dJCategoriesAreVisible = true;
+      }
       this.$refs.categoryAudio.play();
     },
     startDoubleJeopardy() {
@@ -78,6 +83,7 @@ export default {
     timer: false,
     timerStartTime: null,
     categoriesAreVisible: false,
+    dJCategoriesAreVisible: false,
     introRunning: false,
     jeopardy: true,
     doubleJeopardy: false,
