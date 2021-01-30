@@ -320,30 +320,30 @@ export default {
           {
             state: "value",
             text:
-              "While most are vulnerable, doing this to yourself isn't laughable",
+              "While most are vulnerable, doing this to yourself isn't laughable.",
             dd: false,
           },
           {
             state: "value",
-            text: "One out, this is nearly impossible to get back in.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
-              "This cover is nearly impossible to get back on",
+            text: "Once out of its tube, this is nearly impossible to get back in.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "When you run out of this, finding or reaching a backup role is nearly impossible.",
+              "This large soft comforter cover is frustratingly cumbersome to put on by yourself",
             dd: false,
           },
           {
             state: "value",
             text:
-              'Popping this ',
+              "Your legs can go numb when trying to reach for a backup role of this.",
+            dd: false,
+          },
+          {
+            state: "value",
+            text:
+              'Resisting the urge to "pop" this tests even the most disciplined of will powers.',
             dd: false,
           },
         ],
@@ -362,7 +362,7 @@ export default {
           {
             state: "value",
             text:
-              "They should think about phazing out this game.",
+              "They should think about phazing this game out.",
             dd: false,
           },
           {
@@ -384,7 +384,7 @@ export default {
           {
             state: "value",
             text:
-              'Need an appetite to finish this blast from the past plastic ball collecting game',
+              'You\'ll need an appetite to finish this "hipp" blast from the past game',
             dd: false,
           },
         ],
