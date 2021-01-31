@@ -14,12 +14,12 @@
       </v-avatar>
     </v-app-bar>
 
-    <!-- <YouTube
+    <YouTube
       v-show="introRunning"
       :id="yt.intro.id"
       :vars="yt.intro.vars"
       @ended="introEnded"
-    ></YouTube> -->
+    ></YouTube>
 
     <audio
       ref="categoryAudio"
@@ -42,7 +42,7 @@ import Score from "./components/Score";
 import Timer from "./components/Timer";
 import Jeopardy from "./components/Jeopardy";
 import DoubleJeopardy from "./components/DoubleJeopardy";
-// import YouTube from "./components/YouTube";
+import YouTube from "./components/YouTube";
 
 export default {
   name: "App",
@@ -52,7 +52,7 @@ export default {
     Jeopardy,
     DoubleJeopardy,
     Timer,
-    // YouTube,
+    YouTube,
   },
   methods: {
     introEnded() {
@@ -107,7 +107,7 @@ export default {
         }
       }.bind(this)
     );
-    this.introRunning = false;
+    this.introRunning = true;
   },
 };
 </script>
