@@ -2,16 +2,10 @@
   <v-container>
     <v-row class="text-center">
       <v-col class="scores">
-        <v-icon @click="blueUp" color="green"> mdi-arrow-up </v-icon>
-        <v-icon @click="blueDown" color="red"> mdi-arrow-down </v-icon>
-        Blue:
-        {{ blueScore }}
-      </v-col>
-      <v-col class="scores">
-        <v-icon @click="pinkUp" color="green"> mdi-arrow-up </v-icon>
-        <v-icon @click="pinkDown" color="red"> mdi-arrow-down </v-icon>
-        Pink:
-        {{ pinkScore }}
+        <v-icon @click="scoreDown" color="red"> mdi-arrow-down </v-icon>
+        {{ name }}:
+        {{ score }}
+        <v-icon @click="scoreUp" color="green"> mdi-arrow-up </v-icon>
       </v-col>
     </v-row>
   </v-container>
@@ -20,29 +14,35 @@
 <script>
 export default {
   name: "Score",
+  props: {
+    name: String,
+    scoreUp: Boolean,
+    scoreDown: Boolean,
+  },
   data: () => ({
-    blueScore: 0,
-    pinkScore: 0,
+    score: 0,
   }),
   methods: {
-    blueUp() {
-      this.blueScore += 100;
+    moveScoreUp() {
+      this.score += 100;
     },
-    blueDown() {
-      this.blueScore -= 100;
-    },
-    pinkUp() {
-      this.pinkScore += 100;
-    },
-    pinkDown() {
-      this.pinkScore -= 100;
+    moveScoreDown() {
+      this.score -= 100;
     },
   },
+  watch: {
+    scoreUp() {
+      this.moveScoreUp();
+    },
+    scoreDown() {
+      this.moveScoreDown();
+    }
+  }
 };
 </script>
 <style lang="css" scoped>
 .scores {
   background-color: #060ce9;
-  color: #ffcc00;
+  color: #FFF;
 }
 </style>

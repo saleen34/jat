@@ -4,22 +4,30 @@
       <v-avatar @click="displayCategories">
         <img src="@/assets/tf.webp" />
       </v-avatar>
-      <v-spacer />
+      <Score
+        name="Boys"
+        :scoreUp="leftScoreUp"
+        :scoreDown="leftScoreDown"
+      />
       <v-avatar @click="startDoubleJeopardy">
         <img src="@/assets/dd.png" />
       </v-avatar>
-      <v-spacer />
+      <Score
+        name="Girls"
+        :scoreUp="rightScoreUp"
+        :scoreDown="rightScoreDown"
+      />
       <v-avatar @click="startTimer">
         <img src="@/assets/timer.jpg" />
       </v-avatar>
     </v-app-bar>
 
-    <YouTube
+    <!-- <YouTube
       v-show="introRunning"
       :id="yt.intro.id"
       :vars="yt.intro.vars"
       @ended="introEnded"
-    ></YouTube>
+    ></YouTube> -->
 
     <audio
       ref="categoryAudio"
@@ -30,7 +38,6 @@
 
     <v-main v-show="!introRunning">
       <Timer v-if="timer" :startTime="timerStartTime" />
-      <Score />
       <Jeopardy v-if="jeopardy" :toggleCats="categoriesAreVisible" />
       <DoubleJeopardy
         v-if="doubleJeopardy"
@@ -45,7 +52,7 @@ import Score from "./components/Score";
 import Timer from "./components/Timer";
 import Jeopardy from "./components/Jeopardy";
 import DoubleJeopardy from "./components/DoubleJeopardy";
-import YouTube from "./components/YouTube";
+// import YouTube from "./components/YouTube";
 
 export default {
   name: "App",
@@ -55,7 +62,7 @@ export default {
     Jeopardy,
     DoubleJeopardy,
     Timer,
-    YouTube,
+    // YouTube,
   },
   methods: {
     introEnded() {
@@ -83,6 +90,10 @@ export default {
     },
   },
   data: () => ({
+    leftScoreUp: false,
+    leftScoreDown: false,
+    rightScoreUp: false,
+    rightScoreDown: false,
     timer: false,
     timerStartTime: null,
     categoriesAreVisible: false,
@@ -108,9 +119,26 @@ export default {
         if (e.keyCode === 116) {
           this.startTimer();
         }
+        //right down
+        if (e.keyCode === 91) {
+          this.rightScoreDown = !this.rightScoreDown;
+        }
+        //right up
+        if (e.keyCode === 93) {
+          this.rightScoreUp = !this.rightScoreUp;
+        }
+        //left down
+        if (e.keyCode === 111) {
+          this.leftScoreDown = !this.leftScoreDown;
+        }
+        //left up
+        if (e.keyCode === 112) {
+          this.leftScoreUp = !this.leftScoreUp;
+        }
+
       }.bind(this)
     );
-    this.introRunning = true;
+    this.introRunning = false;
   },
 };
 </script>

@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .theme--light.v-card {
   background-color: #060ce9;
-  color: #ffcc00;
+  color: #FFF;
   font-size: 70px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container v-show="!showDailyDouble" class="answerText noselect" pa-0>
+    <v-container v-show="!showDailyDouble" class="answerText noselect">
       <v-row>
         <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
           <v-card
@@ -8,8 +8,8 @@
             align="center"
             justify="center"
             outlined
-            min-height="175px"
-            pa-0
+            min-height="100px"
+            class="catColor"
           >
             {{ cat.name }}
           </v-card>
@@ -21,9 +21,9 @@
     </v-container>
     <v-container
       v-show="!showDailyDouble"
-      v-for="(n, answerIndex) in 6"
+      v-for="(n, answerIndex) in 5"
       :key="answerIndex"
-      pa-0
+      pa-1
     >
       <v-row pa-3>
         <v-col v-for="(j, catIndex) in 6" :key="catIndex">
@@ -166,12 +166,6 @@ export default {
           {
             state: "value",
             text:
-              "When preparing this, fresh lime juice is added to simple syrup, mint leaves then muddled.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
               'This lemon-lime drink was part of the "clear craze" of the 1990s that produced products such as Crystal Pepsi and Tab Clear.',
             dd: false,
           },
@@ -197,12 +191,6 @@ export default {
             state: "value",
             text:
               "First-team All-ACC in 1987, this NBA player was the shortest to ever play coming in at 5 ft 3 in",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
-              "In 1994, this athlete became embroiled in controversy when her ex-husband orchestrated an attack against her skating rival Nancy Kerrigan.",
             dd: false,
           },
           {
@@ -255,12 +243,6 @@ export default {
           {
             state: "value",
             text:
-              "This material is made from the underside of the animal skin, which is softer and more pliable than, though not as durable as, the outer skin layer.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
               "A type of woven tufted fabric in which the cut threads are evenly distributed, with a short dense pile, giving it a distinctive soft feel.",
             dd: false,
           },
@@ -302,11 +284,6 @@ export default {
             text: "c4_five_ans",
             dd: false,
           },
-          {
-            state: "value",
-            text: "c4_six_ans",
-            dd: false,
-          },
         ],
       },
       {
@@ -340,12 +317,6 @@ export default {
           {
             state: "value",
             text:
-              "Films she has acted in have grossed over $6 billion worldwide, and she was the world's highest-paid actress in 2015 and 2016. She shares initials with a former In Living Color dancer.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
               'Heather Graham and her "twins" where front and center as Roller Girl in this 1997 drama.',
             dd: false,
           },
@@ -360,12 +331,6 @@ export default {
             state: "value",
             text:
               "She rose to prominence as the lead vocalist of the alternative rock band Hole, which she formed in 1989.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
-              "This furniture outlet is located on SW Cascade Ave, Beaverton, OR",
             dd: false,
           },
           {
@@ -403,6 +368,9 @@ export default {
 }
 .answerText {
   cursor: pointer;
+}
+.catColor {
+  color: white!important;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

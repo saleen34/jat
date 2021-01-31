@@ -5,26 +5,27 @@
         <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
           <v-card
             v-if="cat.show"
-            class="pa-6"
             align="center"
             justify="center"
             outlined
-            min-height="175px"
+            min-height="100px"
+            class="catColor"
           >
             {{ cat.name }}
           </v-card>
           <v-card v-if="!cat.show" align="center" justify="center" outlined>
-            <v-img src="@/assets/jeopardy.jpg" />
+            <v-img src="@/assets/doubleJeopardy.jpeg" />
           </v-card>
         </v-col>
       </v-row>
     </v-container>
     <v-container
       v-show="!showDailyDouble"
-      v-for="(n, answerIndex) in 6"
+      v-for="(n, answerIndex) in 5"
       :key="answerIndex"
+      pa-1
     >
-      <v-row>
+      <v-row pa-3>
         <v-col v-for="(j, catIndex) in 6" :key="catIndex">
           <AnswerText
             :value="cats[answerIndex].id"
@@ -146,7 +147,7 @@ export default {
     },
     cats: [
       {
-        id: 200,
+        id: 400,
         show: false,
         name: "Piles of shit",
         answers: [
@@ -154,12 +155,6 @@ export default {
             state: "value",
             text:
               'Spanish for "little fly" these insects carry diseases, feed on humans and really suck.',
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
-              "This pos aimed to eliminate Jews from Germany and establish a New Order.",
             dd: false,
           },
           {
@@ -189,18 +184,13 @@ export default {
         ],
       },
       {
-        id: 400,
+        id: 800,
         show: false,
         name: "Dirty Acronyms",
         answers: [
           {
             state: "value",
             text: "dtf",
-            dd: false,
-          },
-          {
-            state: "value",
-            text: "bj",
             dd: false,
           },
           {
@@ -226,7 +216,7 @@ export default {
         ],
       },
       {
-        id: 600,
+        id: 1200,
         show: false,
         name: "Drugs",
         answers: [
@@ -256,19 +246,13 @@ export default {
           {
             state: "value",
             text:
-              "This drug is often considered the drug of choice within the rave culture and is also used at clubs, festivals, and house parties.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
               "A dissociative drug used as an anesthetic in veterinary practices.",
             dd: false,
           },
         ],
       },
       {
-        id: 800,
+        id: 1600,
         show: false,
         name: "Name that movie",
         answers: [
@@ -296,11 +280,6 @@ export default {
           },
           {
             state: "value",
-            text: "It's a lock! I hit my 7-iron like John Daly hits the 3",
-            dd: false,
-          },
-          {
-            state: "value",
             text:
               "Nobody's trading with anybody. This ain't a goddamn, fucking city council meeting, you know? Now listen up, Mr. Pink. There's two ways you can go on this job: my way or the highway.",
             dd: false,
@@ -308,7 +287,7 @@ export default {
         ],
       },
       {
-        id: 1000,
+        id: 2000,
         show: false,
         name: "Reversing entropy",
         answers: [
@@ -320,24 +299,19 @@ export default {
           {
             state: "value",
             text:
-              "While most are vulnerable, doing this to yourself isn't laughable.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text: "Once out of its tube, this is nearly impossible to get back in.",
+              "While most are vulnerable, doing this to yourself isn't funny.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "This large soft comforter cover is frustratingly cumbersome to put on by yourself",
+              "Once out of its tube, this is nearly impossible to get back in.",
             dd: false,
           },
           {
             state: "value",
             text:
-              "Your legs can go numb when trying to reach for a backup role of this.",
+              "This large soft comforter cover is frustratingly cumbersome to put on by yourself.",
             dd: false,
           },
           {
@@ -349,20 +323,18 @@ export default {
         ],
       },
       {
-        id: 1200,
+        id: 2000,
         show: false,
-        name: "\"Bored\" Games",
+        name: '"Bored" Games',
         answers: [
           {
             state: "value",
-            text:
-              "Round and round we go, just don't land on a PP or BW.",
+            text: "Round and round we go, just don't land on a PP or BW.",
             dd: false,
           },
           {
             state: "value",
-            text:
-              "They should think about phazing this game out.",
+            text: "They should think about phazing this game out.",
             dd: false,
           },
           {
@@ -377,14 +349,7 @@ export default {
           },
           {
             state: "value",
-            text:
-              "Flicking plastic disks into a target.",
-            dd: false,
-          },
-          {
-            state: "value",
-            text:
-              'You\'ll need an appetite to finish this "hipp" blast from the past game',
+            text: "Flicking plastic disks into a target.",
             dd: false,
           },
         ],
@@ -400,6 +365,9 @@ export default {
 }
 .answerText {
   cursor: pointer;
+}
+.catColor {
+  color: white!important;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
