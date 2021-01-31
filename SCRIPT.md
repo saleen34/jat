@@ -12,7 +12,7 @@ You're on the board
 Oh you're so close
 You just doubled your score
 
-
+1366 x 768
 
 March 2-8
 Dean/Jayne 3-5

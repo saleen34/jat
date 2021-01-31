@@ -1,15 +1,15 @@
 <template>
   <div>
-    <v-container v-show="!showDailyDouble" class="answerText noselect">
+    <v-container v-show="!showDailyDouble" class="answerText noselect" pa-0>
       <v-row>
         <v-col v-for="cat in cats" :key="cat.id" @click="expandCat(cat)">
           <v-card
             v-if="cat.show"
-            class="pa-6"
             align="center"
             justify="center"
             outlined
             min-height="175px"
+            pa-0
           >
             {{ cat.name }}
           </v-card>
@@ -23,8 +23,9 @@
       v-show="!showDailyDouble"
       v-for="(n, answerIndex) in 6"
       :key="answerIndex"
+      pa-0
     >
-      <v-row>
+      <v-row pa-3>
         <v-col v-for="(j, catIndex) in 6" :key="catIndex">
           <AnswerText
             :value="cats[answerIndex].id"

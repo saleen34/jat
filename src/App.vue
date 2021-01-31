@@ -4,11 +4,11 @@
       <v-avatar @click="displayCategories">
         <img src="@/assets/tf.webp" />
       </v-avatar>
-      <v-spacer/>
+      <v-spacer />
       <v-avatar @click="startDoubleJeopardy">
         <img src="@/assets/dd.png" />
       </v-avatar>
-      <v-spacer/>
+      <v-spacer />
       <v-avatar @click="startTimer">
         <img src="@/assets/timer.jpg" />
       </v-avatar>
@@ -32,7 +32,10 @@
       <Timer v-if="timer" :startTime="timerStartTime" />
       <Score />
       <Jeopardy v-if="jeopardy" :toggleCats="categoriesAreVisible" />
-      <DoubleJeopardy v-if="doubleJeopardy" :toggleCats="dJCategoriesAreVisible" />
+      <DoubleJeopardy
+        v-if="doubleJeopardy"
+        :toggleCats="dJCategoriesAreVisible"
+      />
     </v-main>
   </v-app>
 </template>
@@ -103,7 +106,7 @@ export default {
       function (e) {
         console.log(e.keyCode);
         if (e.keyCode === 116) {
-         this.startTimer();
+          this.startTimer();
         }
       }.bind(this)
     );
@@ -124,5 +127,22 @@ export default {
 }
 .v-avatar {
   cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  #app ul il:first-of-type {
+    visibility: visible;
+  }
+  #app ul il:last-of-type {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #app ul il:first-of-type {
+    visibility: hidden;
+  }
+  #app ul il:last-of-type {
+    visibility: visible;
+  }
 }
 </style>
