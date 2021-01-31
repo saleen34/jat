@@ -146,7 +146,7 @@ export default {
     },
     cats: [
       {
-        id: 100,
+        id: 200,
         show: false,
         name: "Piles of shit",
         answers: [
@@ -189,7 +189,7 @@ export default {
         ],
       },
       {
-        id: 200,
+        id: 400,
         show: false,
         name: "Dirty Acronyms",
         answers: [
@@ -226,7 +226,7 @@ export default {
         ],
       },
       {
-        id: 300,
+        id: 600,
         show: false,
         name: "Drugs",
         answers: [
@@ -268,7 +268,7 @@ export default {
         ],
       },
       {
-        id: 400,
+        id: 800,
         show: false,
         name: "Name that movie",
         answers: [
@@ -308,7 +308,7 @@ export default {
         ],
       },
       {
-        id: 500,
+        id: 1000,
         show: false,
         name: "Reversing entropy",
         answers: [
@@ -349,7 +349,7 @@ export default {
         ],
       },
       {
-        id: 600,
+        id: 1200,
         show: false,
         name: "\"Bored\" Games",
         answers: [
