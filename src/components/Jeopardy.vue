@@ -45,9 +45,21 @@
     ></Overlay>
 
     <OverlayVideo
-      @close-dialog="videoCard.visible = false"
-      :visible="videoCard.visible"
-      :link="videoCard.link"
+      @close-dialog="closeAllVideos"
+      :visible="isVideoVisible('ship')"
+      link="ship.mp4"
+    ></OverlayVideo>
+
+    <OverlayVideo
+      @close-dialog="closeAllVideos"
+      :visible="isVideoVisible('apple')"
+      link="apple.mp4"
+    ></OverlayVideo>
+
+    <OverlayVideo
+      @close-dialog="closeAllVideos"
+      :visible="isVideoVisible('hits')"
+      link="hits.mp4"
     ></OverlayVideo>
 
     <YouTube
@@ -81,6 +93,16 @@ export default {
     OverlayVideo,
   },
   methods: {
+    isVideoVisible(what) {
+      console.log(what + " : " + this.videoCard.link);
+      if (this.videoCard.link === what) {
+        return true;
+      }
+      return false;
+    },
+    closeAllVideos() {
+      this.videoCard.link = '';
+    },
     setSelected(catIndex, answerIndex) {
       if (this.cats[catIndex].answers[answerIndex].state === "value") {
         this.cats[catIndex].answers[answerIndex].state = "answer";
@@ -277,28 +299,32 @@ export default {
           {
             state: "value",
             text: "c4_one_ans",
-            dd: '',
-            link: 'apple.mp4',
+            dd: false,
+            link: 'apple',
           },
           {
             state: "value",
             text: "c4_two_ans",
             dd: false,
+            link: '',
           },
           {
             state: "value",
             text: "c4_three_ans",
             dd: false,
+            link: 'ship',
           },
           {
             state: "value",
             text: "c4_four_ans",
             dd: false,
+            link: '',
           },
           {
             state: "value",
             text: "c4_five_ans",
             dd: false,
+            link: 'hits',
           },
         ],
       },

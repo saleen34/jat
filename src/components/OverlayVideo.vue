@@ -2,7 +2,7 @@
   <div>
     <v-dialog v-model="dialog" class="dialog" @input="close" fullscreen>
       <v-card align="center" justify="center" class="pa-12">
-        <video controls>
+        <video height="768" controls>
           <source
             v-if="link"
             :src="require('@/assets/video/' + link + '')"
