@@ -1,26 +1,47 @@
 <template>
   <div>
-      Hello
+    <v-container pa-12>
+      <v-card pa-12 v-if="category" @click="showAnswer">
+        {{ categoryText }}
+      </v-card>
+      <v-card pa-12 v-if="!category"> {{ answerText }} </v-card>
+    </v-container>
+    <audio
+      ref="finalAudio"
+      src="@/assets/audio/final.mp3"
+      preload
+      muted
+    ></audio>
   </div>
 </template>
 <script>
-
 export default {
   name: "FinalJeopardy",
-  components: {
+  data: () => ({
+    category: true,
+    answerText: "THIS IS THE ANSWER TO THE GAME",
+    categoryText: "CATEGORY TEXT",
+  }),
+  methods: {
+    showAnswer() {
+      this.category = false;
+      let self = this;
+      setTimeout(function(){ self.$refs.finalAudio.play(); }, 5000);
+    },
   },
 };
 </script>
 <style lang="css" scoped>
 .theme--light.v-card {
   background-color: #060ce9;
-  color: #ffcc00;
+  color: #fff;
+  font-size: 100px;
 }
 .answerText {
   cursor: pointer;
 }
 .catColor {
-  color: white!important;
+  color: white !important;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -33,8 +54,5 @@ export default {
 }
 .theme--light.v-sheet--outlined {
   border: 3px solid black !important;
-}
-.theme--light.v-card.blank {
-  color: #060ce9;
 }
 </style>

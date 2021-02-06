@@ -1,11 +1,17 @@
-Hello and welcome everyone to Birthday Jeopardy. We've got a great set of friends together today to celebrate Courtney's 40th. Let's have some fun!
+Hello and welcome everyone to Birthday Jeopardy.
+We've got a great set of friends together today to celebrate Courtney's 40th.
+Let's have some fun!
 
 The Boys have chosen the team name ___
 The Girls __
 
 Now, lets have look at the board.
 
-Courtney, since your the center of attention tonight, your team can go first. Please choose a category. And let me remind you to please refrain from racial slurs.
+Courtney, since your the center of attention tonight, your team can go first.
+Please choose a category.
+
+
+And let me remind you to please refrain from racial slurs.
 
 That's it
 You're on the board

@@ -4,6 +4,7 @@
       <v-card align="center" justify="center" class="pa-12">
         <video controls>
           <source
+            v-if="link"
             :src="require('@/assets/video/' + link + '')"
             type="video/mp4"
             autoplay
