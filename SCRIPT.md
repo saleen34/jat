@@ -1,15 +1,15 @@
+Rules/Disclaimer:
+* The questions are entirely made up could be completely wrong or bullshit, deal with it.
+* The buzzer system sucks, make it work.
+* When an answer popup goes away, that is when you can buzz in
+* There is a five second timer after you buzz in
+
 Hello and welcome everyone to Birthday Jeopardy.
 We've got a great set of friends together today to celebrate Courtney's 40th and Tim's birthday.
 Let's have some fun!
 
 The Boys have chosen the team name ___
 The Girls __
-
-Rules/Disclaimer:
-* The questions are entirely made up could be completely wrong or bullshit, deal with it.
-* The buzzer system sucks, make it work.
-* When an answer popup goes away, that is when you can buzz in
-* There is a five second timer after you buzz in
 
 Now, lets have look at the board.
 

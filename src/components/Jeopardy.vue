@@ -113,10 +113,10 @@ export default {
       }
     },
     ddEnded() {
-      let frames = document.getElementsByTagName("iframe");
-      for (let i = 0; i < frames.length; ++i) {
-        frames[i].remove();
-      }
+      // let frames = document.getElementsByTagName("iframe");
+      // for (let i = 0; i < frames.length; ++i) {
+      //   frames[i].remove();
+      // }
       this.showDailyDouble = false;
       this.dailyDouble.done;
     },
