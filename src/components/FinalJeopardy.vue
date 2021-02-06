@@ -1,10 +1,10 @@
 <template>
   <div>
     <v-container pa-12>
-      <v-card pa-12 v-if="category" @click="showAnswer">
+      <v-card align="center" justify="center" pa-12 v-if="category" @click="showAnswer">
         {{ categoryText }}
       </v-card>
-      <v-card pa-12 v-if="!category"> {{ answerText }} </v-card>
+      <v-card align="center" justify="center" pa-12 v-if="!category"> {{ answerText }} </v-card>
     </v-container>
     <audio
       ref="finalAudio"
@@ -19,14 +19,14 @@ export default {
   name: "FinalJeopardy",
   data: () => ({
     category: true,
-    answerText: "THIS IS THE ANSWER TO THE GAME",
-    categoryText: "CATEGORY TEXT",
+    answerText: "On January 3, 1987, she was the first woman inducted into the Rock and Roll Hall of Fame.",
+    categoryText: "Famous People",
   }),
   methods: {
     showAnswer() {
       this.category = false;
       let self = this;
-      setTimeout(function(){ self.$refs.finalAudio.play(); }, 5000);
+      setTimeout(function(){ self.$refs.finalAudio.play(); }, 7000);
     },
   },
 };

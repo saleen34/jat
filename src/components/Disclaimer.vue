@@ -4,7 +4,7 @@
       <v-card class="pa-12">
         Rules/Disclaimer:
         <ul>
-          <li>The questions are entirely made up could be completely wrong or bullshit, deal with it.</li>
+          <li>The questions are entirely made up could be completely wrong or bullshit.</li>
           <li>The buzzer system sucks, make it work.</li>
           <li>You may only buzz in when the answer dialog goes away.</li>
           <li>There is a five second timer after you buzz in.</li>

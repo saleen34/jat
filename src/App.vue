@@ -15,6 +15,10 @@
         <img src="@/assets/dd.png" />
       </v-avatar>
 
+      <v-avatar @click="showFinalJeopardy">
+        <img src="@/assets/final.png" />
+      </v-avatar>
+
       <Score name="Girls" :scoreUp="rightScoreUp" :scoreDown="rightScoreDown" />
 
       <v-avatar @click="playCommerical('bra')">
@@ -115,6 +119,11 @@ export default {
     startDoubleJeopardy() {
       this.jeopardy = false;
       this.doubleJeopardy = true;
+    },
+    showFinalJeopardy() {
+      this.jeopardy = false;
+      this.doubleJeopardy = false;
+      this.finalJeopardy = true;
     },
     startTimer() {
       this.timerStartTime = Date.now();
