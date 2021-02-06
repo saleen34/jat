@@ -44,6 +44,12 @@
       :text="largeCard.text"
     ></Overlay>
 
+    <OverlayVideo
+      @close-dialog="videoCard.visible = false"
+      :visible="videoCard.visible"
+      :link="videoCard.link"
+    ></OverlayVideo>
+
     <YouTube
       v-if="showDailyDouble"
       :id="yt.dd.id"
@@ -64,6 +70,7 @@
 import AnswerText from "./AnswerText";
 import Overlay from "./Overlay";
 import YouTube from "./YouTube";
+import OverlayVideo from "./OverlayVideo";
 
 export default {
   name: "Jeopardy",
@@ -71,6 +78,7 @@ export default {
     AnswerText,
     Overlay,
     YouTube,
+    OverlayVideo,
   },
   methods: {
     setSelected(catIndex, answerIndex) {
@@ -87,7 +95,10 @@ export default {
       this.largeCard.visible = true;
     },
     expandAnswer(catIndex, answerIndex) {
-      if (this.cats[catIndex].answers[answerIndex].dd) {
+      if (this.cats[catIndex].answers[answerIndex].link) {
+        this.videoCard.link = this.cats[catIndex].answers[answerIndex].link;
+        this.videoCard.visible = true;
+      } else if (this.cats[catIndex].answers[answerIndex].dd) {
         this.doDailyDouble();
       } else {
         this.largeCard.text = this.cats[catIndex].answers[answerIndex].text;
@@ -143,6 +154,10 @@ export default {
     largeCard: {
       text: "",
       dd: false,
+      visible: false,
+    },
+    videoCard: {
+      link: "",
       visible: false,
     },
     cats: [
@@ -262,7 +277,8 @@ export default {
           {
             state: "value",
             text: "c4_one_ans",
-            dd: false,
+            dd: '',
+            link: 'apple.mp4',
           },
           {
             state: "value",

@@ -17,7 +17,7 @@
         :scoreUp="rightScoreUp"
         :scoreDown="rightScoreDown"
       />
-      <v-avatar @click="startTimer">
+      <v-avatar @click="startFinalJeopardy">
         <img src="@/assets/timer.jpg" />
       </v-avatar>
     </v-app-bar>
@@ -43,6 +43,9 @@
         v-if="doubleJeopardy"
         :toggleCats="dJCategoriesAreVisible"
       />
+      <FinalJeopardy
+        v-if="finalJeopardy"
+      />
     </v-main>
   </v-app>
 </template>
@@ -67,6 +70,11 @@ export default {
   methods: {
     introEnded() {
       this.introRunning = false;
+    },
+    startFinalJeopardy() {
+      this.jeopardy = false;
+      this.doubleJeopardy = false;
+      this.finalJeopardy = true;
     },
     displayCategories() {
       if (this.jeopardy) {
@@ -101,6 +109,7 @@ export default {
     introRunning: false,
     jeopardy: true,
     doubleJeopardy: false,
+    finalJeopardy: false,
     yt: {
       intro: {
         id: "njPzMyRGq9c",
