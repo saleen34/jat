@@ -8,17 +8,30 @@
       <v-avatar @click="startDoubleJeopardy">
         <img src="@/assets/dd.png" />
       </v-avatar>
+
       <Score name="Girls" :scoreUp="rightScoreUp" :scoreDown="rightScoreDown" />
-      <v-avatar @click="startFinalJeopardy">
-        <img src="@/assets/timer.jpg" />
+
+      <v-avatar @click="playCommerical('bra')">
+        <img src="@/assets/bra.jpg" />
       </v-avatar>
-      <v-icon dark @click="playCommerical('bra')"> mdi-cloud-upload </v-icon>
-      <v-icon dark @click="playCommerical('smoking')"> mdi-cloud-upload </v-icon>
-      <v-icon dark @click="playCommerical('mcdonalds')"> mdi-cloud-upload </v-icon>
-      <v-icon dark @click="playCommerical('pepsi')"> mdi-cloud-upload </v-icon>
-      <v-icon dark @click="playCommerical('crunch')"> mdi-cloud-upload </v-icon>
-      <v-icon dark @click="playCommerical('beer')"> mdi-cloud-upload </v-icon>
-      <v-icon dark @click="playCommerical('long')"> mdi-cloud-upload </v-icon>
+      <v-avatar @click="playCommerical('smoking')">
+        <img src="@/assets/sig.jpeg" />
+      </v-avatar>
+      <v-avatar @click="playCommerical('mcdonalds')">
+        <img src="@/assets/mc.png" />
+      </v-avatar>
+      <v-avatar @click="playCommerical('pepsi')">
+        <img src="@/assets/pepsi.jpeg" />
+      </v-avatar>
+      <v-avatar @click="playCommerical('crunch')">
+        <img src="@/assets/crunch.jpeg" />
+      </v-avatar>
+      <v-avatar @click="playCommerical('beer')">
+        <img src="@/assets/bl.png" />
+      </v-avatar>
+      <v-avatar @click="playCommerical('long')">
+      <v-icon dark> mdi-cloud-upload </v-icon>
+      </v-avatar>
     </v-app-bar>
 
     <YouTube
@@ -184,7 +197,7 @@ export default {
         }
       }.bind(this)
     );
-    this.ytRunning = true;
+    this.ytRunning = false;
   },
 };
 </script>
