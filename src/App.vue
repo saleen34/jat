@@ -4,7 +4,13 @@
       <v-avatar @click="displayCategories">
         <img src="@/assets/tf.webp" />
       </v-avatar>
+
+      <v-avatar @click="showDisclaimer">
+        <v-icon dark> mdi-message-text </v-icon>
+      </v-avatar>
+
       <Score name="Boys" :scoreUp="leftScoreUp" :scoreDown="leftScoreDown" />
+
       <v-avatar @click="startDoubleJeopardy">
         <img src="@/assets/dd.png" />
       </v-avatar>
@@ -30,9 +36,14 @@
         <img src="@/assets/bl.png" />
       </v-avatar>
       <v-avatar @click="playCommerical('long')">
-      <v-icon dark> mdi-cloud-upload </v-icon>
+        <v-icon dark> mdi-cloud-upload </v-icon>
       </v-avatar>
     </v-app-bar>
+
+    <Disclaimer
+      @close-dialog="disclaimer.visible = false"
+      :visible="disclaimer.visible"
+    ></Disclaimer>
 
     <YouTube
       v-show="ytRunning"
@@ -68,6 +79,7 @@ import Jeopardy from "./components/Jeopardy";
 import DoubleJeopardy from "./components/DoubleJeopardy";
 import FinalJeopardy from "./components/FinalJeopardy";
 import YouTube from "./components/YouTube";
+import Disclaimer from "./components/Disclaimer";
 
 export default {
   name: "App",
@@ -79,6 +91,7 @@ export default {
     FinalJeopardy,
     Timer,
     YouTube,
+    Disclaimer,
   },
   methods: {
     ytEnded() {
@@ -110,31 +123,34 @@ export default {
     timerEnded() {
       this.timer = false;
     },
+    showDisclaimer() {
+      this.disclaimer.visible = true;
+    },
     playCommerical(what) {
-      switch(what) {
-        case 'bra':
+      switch (what) {
+        case "bra":
           this.currentYoutubeId = this.yt.commercial_bra;
-        break;
-        case 'mcdonalds':
+          break;
+        case "mcdonalds":
           this.currentYoutubeId = this.yt.commercial_mcdonalds;
-        break;
-        case 'pepsi':
+          break;
+        case "pepsi":
           this.currentYoutubeId = this.yt.commercial_pepsi;
-        break;
-        case 'crunch':
+          break;
+        case "crunch":
           this.currentYoutubeId = this.yt.commercial_crunch;
-        break;
-        case 'smoking':
+          break;
+        case "smoking":
           this.currentYoutubeId = this.yt.commercial_smoking;
-        break;
-        case 'beer':
+          break;
+        case "beer":
           this.currentYoutubeId = this.yt.commercial_bl;
-        break;
-        case 'long':
+          break;
+        case "long":
           this.currentYoutubeId = this.yt.commerical_long;
-        break;
+          break;
         default:
-        break;
+          break;
       }
 
       this.yt.restart = true;
@@ -142,6 +158,9 @@ export default {
     },
   },
   data: () => ({
+    disclaimer: {
+      visible: false,
+    },
     leftScoreUp: false,
     leftScoreDown: false,
     rightScoreUp: false,
@@ -168,7 +187,7 @@ export default {
       commercial_bl: "0K5BgCI-U7c",
       commercial_pepsi: "af_HO9YTi3g",
       commercial_crunch: "fcJAhAqhRww",
-      commerical_long: "ApzOqrWRiw4"
+      commerical_long: "ApzOqrWRiw4",
     },
   }),
   mounted: function () {
@@ -197,7 +216,7 @@ export default {
         }
       }.bind(this)
     );
-    this.ytRunning = false;
+    this.ytRunning = true;
   },
 };
 </script>
