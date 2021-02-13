@@ -9,7 +9,7 @@
         <v-icon dark> mdi-message-text </v-icon>
       </v-avatar>
 
-      <Score name="Boys" :scoreUp="leftScoreUp" :scoreDown="leftScoreDown" />
+      <Score :isDouble="doubleJeopardy" name="Boys" :scoreUp="leftScoreUp" :scoreDown="leftScoreDown" />
 
       <v-avatar @click="startDoubleJeopardy">
         <img src="@/assets/dd.png" />
@@ -19,7 +19,7 @@
         <img src="@/assets/final.png" />
       </v-avatar>
 
-      <Score name="Girls" :scoreUp="rightScoreUp" :scoreDown="rightScoreDown" />
+      <Score :isDouble="doubleJeopardy" name="Girls" :scoreUp="rightScoreUp" :scoreDown="rightScoreDown" />
 
       <v-avatar @click="playCommerical('bra')">
         <img src="@/assets/bra.jpg" />
@@ -29,6 +29,9 @@
       </v-avatar>
       <v-avatar @click="playCommerical('mcdonalds')">
         <img src="@/assets/mc.png" />
+      </v-avatar>
+      <v-avatar @click="playCommerical('kiss')">
+        <img src="@/assets/kiss.png" />
       </v-avatar>
       <v-avatar @click="playCommerical('pepsi')">
         <img src="@/assets/pepsi.jpeg" />
@@ -68,7 +71,7 @@
       <Timer v-if="timer" :startTime="timerStartTime" />
       <Jeopardy v-if="jeopardy" :toggleCats="categoriesAreVisible" />
       <DoubleJeopardy
-        v-if="doubleJeopardy"
+      v-if="doubleJeopardy"
         :toggleCats="dJCategoriesAreVisible"
       />
       <FinalJeopardy v-if="finalJeopardy" />
@@ -143,6 +146,9 @@ export default {
         case "mcdonalds":
           this.currentYoutubeId = this.yt.commercial_mcdonalds;
           break;
+        case "kiss":
+          this.currentYoutubeId = this.yt.commercial_kiss;
+          break;
         case "pepsi":
           this.currentYoutubeId = this.yt.commercial_pepsi;
           break;
@@ -192,6 +198,7 @@ export default {
       commercial_intro: "njPzMyRGq9c",
       commercial_bra: "hGnGWjxJZJs",
       commercial_mcdonalds: "Z0bCTsRc5WE",
+      commercial_kiss: "rHp80d7vCbE",
       commercial_smoking: "mBTsVLOpfF0",
       commercial_bl: "0K5BgCI-U7c",
       commercial_pepsi: "af_HO9YTi3g",

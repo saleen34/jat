@@ -8,6 +8,8 @@ Hello and welcome everyone to Birthday Jeopardy.
 We've got a great set of friends together today to celebrate Courtney's 40th and Tim's birthday.
 Let's have some fun!
 
+And the answer is
+
 The Boys have chosen the team name ___
 The Girls __
 
@@ -16,8 +18,34 @@ Now, lets have look at the board.
 Courtney, since your the center of attention tonight, your team can go first.
 Please choose a category.
 
+TAGS
 
-And let me remind you to please refrain from racial slurs.
+-------------------------------------------
+
+Welcome back to Birthday Jeopardy, and please let me remind you refrain from ethnic slurs.
+
+Welcome back to Birthday Jeopardy, once again i'm going to recommend our viewers watch something else.
+That being said, girls... have an incredible
+
+Welcome back, before we begin double jeopardy I would like to appoligize to our asian viewers.. we should have known
+having chineese history as a category would lead to some highly offensive accents from our contestents.
+
+We've got quite a contest going on here
+
+Lets take a look at the score.. and please let me remind you no cursing
+
+Our returning champion...
+
+I don't think we can accept facial expressions...
+
+-------------------------------------------
+
+
+With a commanding lead of
+Moving on...
+I hate my job...
+That is incorrect
+No! Good Lord!
 
 That's it
 You're on the board

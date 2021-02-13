@@ -18,16 +18,25 @@ export default {
     name: String,
     scoreUp: Boolean,
     scoreDown: Boolean,
+    isDouble: Boolean,
   },
   data: () => ({
     score: 0,
   }),
   methods: {
     moveScoreUp() {
-      this.score += 100;
+      let upScore = 100;
+      if (this.isDouble) {
+        upScore = 400;
+      }
+      this.score += upScore;
     },
     moveScoreDown() {
-      this.score -= 100;
+      let upScore = 100;
+      if (this.isDouble) {
+        upScore = 400;
+      }
+      this.score -= upScore;
     },
   },
   watch: {
