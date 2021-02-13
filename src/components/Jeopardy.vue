@@ -150,7 +150,6 @@ export default {
     },
   },
   created: function () {
-    // this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
     this.dailyDouble.when = 2;
   },
   data: () => ({

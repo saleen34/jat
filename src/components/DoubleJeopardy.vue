@@ -128,7 +128,7 @@ export default {
     showDailyDouble: false,
     yt: {
       dd: {
-        id: "FEU2jg5AknE",
+        id: "DZXsmCIMeRU",
         vars: {
           autoplay: 0,
           controls: 1,
@@ -173,7 +173,7 @@ export default {
             state: "value",
             text:
               'This beanie wearing animated shit head frequently says, "Screw you guys, I\'m going home!"',
-            dd: true,
+            dd: false,
           },
           {
             state: "value",
@@ -334,8 +334,8 @@ export default {
           },
           {
             state: "value",
-            text: "They should think about phazing this game out.",
-            dd: false,
+            text: "",
+            dd: true,
           },
           {
             state: "value",
