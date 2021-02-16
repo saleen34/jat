@@ -19,6 +19,10 @@
         <img src="@/assets/final.png" />
       </v-avatar>
 
+      <v-avatar @click="bonus">
+        <img src="@/assets/courts.png" />
+      </v-avatar>
+
       <Score :isDouble="doubleJeopardy" name="Girls" :scoreUp="rightScoreUp" :scoreDown="rightScoreDown" />
 
       <v-avatar @click="playCommerical('bra')">
@@ -63,6 +67,13 @@
     <audio
       ref="categoryAudio"
       src="@/assets/audio/categories.mp3"
+      preload
+      muted
+    ></audio>
+
+    <audio
+      ref="cherryAudio"
+      src="@/assets/audio/cherry.mp3"
       preload
       muted
     ></audio>
@@ -127,6 +138,9 @@ export default {
       this.jeopardy = false;
       this.doubleJeopardy = false;
       this.finalJeopardy = true;
+    },
+    bonus() {
+      this.$refs.cherryAudio.play();
     },
     startTimer() {
       this.timerStartTime = Date.now();

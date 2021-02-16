@@ -62,6 +62,12 @@
       link="hits.mp4"
     ></OverlayVideo>
 
+    <OverlayVideo
+      @close-dialog="closeAllVideos"
+      :visible="isVideoVisible('luck')"
+      link="luck.mp4"
+    ></OverlayVideo>
+
     <YouTube
       v-if="showDailyDouble"
       :id="yt.dd.id"
@@ -246,7 +252,7 @@ export default {
           {
             state: "value",
             text:
-              "This two-time Olympic gold medalist / FIFA Women's World Cup champion was hailed as a soccer icon, she played as a forward for the United States women's national soccer team from 1987 to 2004.",
+              "She was hailed as a soccer icon, played as a forward for the US women's national soccer team from 1987 to 2004.",
             dd: false,
           },
         ],
@@ -281,7 +287,7 @@ export default {
           {
             state: "value",
             text:
-              "A type of textile weave with a pattern of diagonal parallel ribs. It is one of three fundamental types of textile weaves along with plain and satin.",
+              "A type of textile weave with a pattern of diagonal parallel ribs. It is one of three fundamental types along with plain and satin.",
             dd: false,
           },
         ],
@@ -293,7 +299,7 @@ export default {
         answers: [
           {
             state: "value",
-            text: "c4_one_ans",
+            text: "",
             dd: false,
             link: 'apple',
           },
@@ -305,19 +311,19 @@ export default {
           },
           {
             state: "value",
-            text: "c4_three_ans",
+            text: "",
             dd: false,
             link: 'ship',
           },
           {
             state: "value",
-            text: "c4_four_ans",
+            text: "",
             dd: false,
-            link: '',
+            link: 'luck',
           },
           {
             state: "value",
-            text: "c4_five_ans",
+            text: "",
             dd: false,
             link: 'hits',
           },

@@ -19,7 +19,7 @@ export default {
   name: "FinalJeopardy",
   data: () => ({
     category: true,
-    answerText: "On January 3, 1987, she was the first woman inducted into the Rock and Roll Hall of Fame.",
+    answerText: "Born, March 4th 1954, She won a Primetime Emmy Award for Outstanding Lead Actress as Moira Rose",
     categoryText: "Famous People",
   }),
   methods: {
