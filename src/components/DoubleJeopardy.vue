@@ -329,7 +329,7 @@ export default {
         answers: [
           {
             state: "value",
-            text: "Round and round we go, just don't land on a PP or BW.",
+            text: "Round and round we GO, Seriously I'm the car!",
             dd: false,
           },
           {

@@ -58,6 +58,12 @@
 
     <OverlayVideo
       @close-dialog="closeAllVideos"
+      :visible="isVideoVisible('witch')"
+      link="witch.mp4"
+    ></OverlayVideo>
+
+    <OverlayVideo
+      @close-dialog="closeAllVideos"
       :visible="isVideoVisible('hits')"
       link="hits.mp4"
     ></OverlayVideo>
@@ -305,9 +311,9 @@ export default {
           },
           {
             state: "value",
-            text: "c4_two_ans",
+            text: "",
             dd: false,
-            link: '',
+            link: 'witch',
           },
           {
             state: "value",
