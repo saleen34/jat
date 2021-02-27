@@ -389,7 +389,7 @@ export default {
           },
           {
             state: "value",
-            text: "Its the highest in the land.",
+            text: "It's the highest in the land.",
             dd: false,
           },
           {
