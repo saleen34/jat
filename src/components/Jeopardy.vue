@@ -366,7 +366,7 @@ export default {
           {
             state: "value",
             text:
-              'Heather Graham and her "twins" where front and center as Roller Girl in this 1997 drama.',
+              'Heather Graham and her "twins" were front and center as Roller Girl in this 1997 drama.',
             dd: false,
           },
         ],
