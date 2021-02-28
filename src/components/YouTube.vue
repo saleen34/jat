@@ -23,7 +23,9 @@ export default {
   },
   watch: {
     restart() {
-      this.$refs.ytRef.startVideo();
+      if (this.$refs && this.$refs.ytRef && this.$refs.ytRef.startVideo) {
+        this.$refs.ytRef.startVideo();
+      }
     },
   },
 };

@@ -317,7 +317,7 @@ export default {
           {
             state: "value",
             text:
-              'Resisting the urge to "pop" this tests even the most disciplined of will powers.',
+              'Resisting the urge to "pop" this tests even the most disciplined of will powers. (It\'s not what you think..)',
             dd: false,
           },
         ],

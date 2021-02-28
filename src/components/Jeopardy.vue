@@ -58,8 +58,8 @@
 
     <OverlayVideo
       @close-dialog="closeAllVideos"
-      :visible="isVideoVisible('witch')"
-      link="witch.mp4"
+      :visible="isVideoVisible('glass')"
+      link="glass.mp4"
     ></OverlayVideo>
 
     <OverlayVideo
@@ -70,8 +70,8 @@
 
     <OverlayVideo
       @close-dialog="closeAllVideos"
-      :visible="isVideoVisible('luck')"
-      link="luck.mp4"
+      :visible="isVideoVisible('witch')"
+      link="witch.mp4"
     ></OverlayVideo>
 
     <YouTube
@@ -106,7 +106,6 @@ export default {
   },
   methods: {
     isVideoVisible(what) {
-      console.log(what + " : " + this.videoCard.link);
       if (this.videoCard.link === what) {
         return true;
       }
@@ -313,7 +312,7 @@ export default {
             state: "value",
             text: "",
             dd: false,
-            link: 'witch',
+            link: 'glass',
           },
           {
             state: "value",
@@ -325,7 +324,7 @@ export default {
             state: "value",
             text: "",
             dd: false,
-            link: 'luck',
+            link: 'witch',
           },
           {
             state: "value",
