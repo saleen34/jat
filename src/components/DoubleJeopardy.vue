@@ -44,13 +44,13 @@
       :text="largeCard.text"
     ></Overlay>
 
-    <YouTube
-      v-if="showDailyDouble"
-      :id="yt.dd.id"
-      :vars="yt.dd.vars"
-      @ended="ddEnded"
-    >
-    </YouTube>
+    <OverlayDD @close-dialog="closeDDSplash" :visible="ddSplash"></OverlayDD>
+
+    <OverlayVideo
+      @close-dialog="closeAllVideos"
+      :visible="isVideoVisible('boarding')"
+      link="boarding.mp4"
+    ></OverlayVideo>
 
     <audio
       ref="dailyDoubleAudio"
@@ -63,16 +63,32 @@
 <script>
 import AnswerText from "./AnswerText";
 import Overlay from "./Overlay";
-import YouTube from "./YouTube";
+import OverlayDD from "./OverlayDD";
+import OverlayVideo from "./OverlayVideo";
 
 export default {
   name: "DoubleJeopardy",
   components: {
     AnswerText,
     Overlay,
-    YouTube,
+    OverlayDD,
+    OverlayVideo,
   },
   methods: {
+    isVideoVisible(what) {
+      if (this.videoCard.link === what) {
+        return true;
+      }
+      return false;
+    },
+    closeAllVideos() {
+      this.showDailyDouble = false;
+      this.videoCard.link = "";
+    },
+    closeDDSplash() {
+      this.videoCard.link = "boarding";
+      this.showDailyDouble = true;
+    },
     setSelected(catIndex, answerIndex) {
       if (this.cats[catIndex].answers[answerIndex].state === "value") {
         this.cats[catIndex].answers[answerIndex].state = "answer";
@@ -88,26 +104,20 @@ export default {
     },
     expandAnswer(catIndex, answerIndex) {
       if (this.cats[catIndex].answers[answerIndex].dd) {
-        this.doDailyDouble();
+        this.showDailyDoubleSplash();
       } else {
         this.largeCard.text = this.cats[catIndex].answers[answerIndex].text;
         this.largeCard.visible = true;
       }
       this.cats[catIndex].answers[answerIndex].state = "blank";
     },
-    doDailyDouble() {
-      if (!this.dailyDouble.done) {
-        this.$refs.dailyDoubleAudio.play();
-        this.showDailyDouble = true;
-      }
+    showDailyDoubleSplash() {
+      this.$refs.dailyDoubleAudio.play();
+      this.ddSplash = true;
     },
     ddEnded() {
-      let frames = document.getElementsByTagName("iframe");
-      for (let i = 0; i < frames.length; ++i) {
-        frames[i].remove();
-      }
+      this.ddSplash = false;
       this.showDailyDouble = false;
-      this.dailyDouble.done;
     },
   },
   props: {
@@ -120,11 +130,11 @@ export default {
       }
     },
   },
-  created: function () {
-    // this.dailyDouble.when = Math.floor(Math.random() * 36) + 1;
-    this.dailyDouble.when = 2;
-  },
   data: () => ({
+    videoCard: {
+      link: "",
+    },
+    ddSplash: false,
     showDailyDouble: false,
     yt: {
       dd: {
@@ -135,19 +145,13 @@ export default {
         },
       },
     },
-    dailyDouble: {
-      counter: 0,
-      when: -1000,
-      done: false,
-    },
     largeCard: {
       text: "",
-      dd: false,
       visible: false,
     },
     cats: [
       {
-        id: 400,
+        id: 200,
         show: false,
         name: "Piles of shit",
         answers: [
@@ -184,7 +188,7 @@ export default {
         ],
       },
       {
-        id: 800,
+        id: 400,
         show: false,
         name: "Dirty Acronyms",
         answers: [
@@ -216,7 +220,7 @@ export default {
         ],
       },
       {
-        id: 1200,
+        id: 600,
         show: false,
         name: "Drugs",
         answers: [
@@ -252,7 +256,7 @@ export default {
         ],
       },
       {
-        id: 1600,
+        id: 800,
         show: false,
         name: "Name that movie",
         answers: [
@@ -287,7 +291,7 @@ export default {
         ],
       },
       {
-        id: 2000,
+        id: 1000,
         show: false,
         name: "Reversing entropy",
         answers: [
@@ -323,7 +327,7 @@ export default {
         ],
       },
       {
-        id: 2000,
+        id: 1200,
         show: false,
         name: '"Bored" Games',
         answers: [
@@ -367,7 +371,7 @@ export default {
   cursor: pointer;
 }
 .catColor {
-  color: white!important;
+  color: white !important;
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

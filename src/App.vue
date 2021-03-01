@@ -31,6 +31,9 @@
       <v-avatar @click="playCommerical('smoking')">
         <img src="@/assets/sig.jpeg" />
       </v-avatar>
+      <v-avatar @click="playCommerical('zoompers')">
+        <img src="@/assets/kirk.png" />
+      </v-avatar>
       <v-avatar @click="playCommerical('mcdonalds')">
         <img src="@/assets/mc.png" />
       </v-avatar>
@@ -172,6 +175,9 @@ export default {
         case "smoking":
           this.currentYoutubeId = this.yt.commercial_smoking;
           break;
+        case "zoompers":
+          this.currentYoutubeId = this.yt.commerical_zoompers;
+          break;
         case "beer":
           this.currentYoutubeId = this.yt.commercial_bl;
           break;
@@ -218,6 +224,7 @@ export default {
       commercial_pepsi: "af_HO9YTi3g",
       commercial_crunch: "fcJAhAqhRww",
       commerical_long: "ApzOqrWRiw4",
+      commerical_zoompers: "0namqxDt5ao",
     },
   }),
   mounted: function () {

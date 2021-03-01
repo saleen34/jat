@@ -44,6 +44,11 @@
       :text="largeCard.text"
     ></Overlay>
 
+    <OverlayDD
+      @close-dialog="closeDDSplash"
+      :visible="ddSplash"
+    ></OverlayDD>
+
     <OverlayVideo
       @close-dialog="closeAllVideos"
       :visible="isVideoVisible('ship')"
@@ -74,13 +79,11 @@
       link="witch.mp4"
     ></OverlayVideo>
 
-    <YouTube
-      v-if="showDailyDouble"
-      :id="yt.dd.id"
-      :vars="yt.dd.vars"
-      @ended="ddEnded"
-    >
-    </YouTube>
+    <OverlayVideo
+      @close-dialog="closeAllVideos"
+      :visible="isVideoVisible('adios')"
+      link="adios.mp4"
+    ></OverlayVideo>
 
     <audio
       ref="dailyDoubleAudio"
@@ -88,12 +91,13 @@
       preload
       muted
     ></audio>
+
   </div>
 </template>
 <script>
 import AnswerText from "./AnswerText";
 import Overlay from "./Overlay";
-import YouTube from "./YouTube";
+import OverlayDD from "./OverlayDD";
 import OverlayVideo from "./OverlayVideo";
 
 export default {
@@ -101,7 +105,7 @@ export default {
   components: {
     AnswerText,
     Overlay,
-    YouTube,
+    OverlayDD,
     OverlayVideo,
   },
   methods: {
@@ -111,7 +115,12 @@ export default {
       }
       return false;
     },
+    closeDDSplash() {
+      this.videoCard.link = 'adios';
+      this.showDailyDouble = true;
+    },
     closeAllVideos() {
+      this.showDailyDouble = false;
       this.videoCard.link = '';
     },
     setSelected(catIndex, answerIndex) {
@@ -130,24 +139,17 @@ export default {
     expandAnswer(catIndex, answerIndex) {
       if (this.cats[catIndex].answers[answerIndex].link) {
         this.videoCard.link = this.cats[catIndex].answers[answerIndex].link;
-        this.videoCard.visible = true;
       } else if (this.cats[catIndex].answers[answerIndex].dd) {
-        this.doDailyDouble();
+        this.soundDailyDouble();
+        this.ddSplash = true;
       } else {
         this.largeCard.text = this.cats[catIndex].answers[answerIndex].text;
         this.largeCard.visible = true;
       }
       this.cats[catIndex].answers[answerIndex].state = "blank";
     },
-    doDailyDouble() {
-      if (!this.dailyDouble.done) {
-        this.$refs.dailyDoubleAudio.play();
-        this.showDailyDouble = true;
-      }
-    },
-    ddEnded() {
-      this.showDailyDouble = false;
-      this.dailyDouble.done;
+    soundDailyDouble() {
+      this.$refs.dailyDoubleAudio.play();
     },
   },
   props: {
@@ -160,33 +162,15 @@ export default {
       }
     },
   },
-  created: function () {
-    this.dailyDouble.when = 2;
-  },
   data: () => ({
     showDailyDouble: false,
-    yt: {
-      dd: {
-        id: "FEU2jg5AknE",
-        vars: {
-          autoplay: 0,
-          controls: 1,
-        },
-      },
-    },
-    dailyDouble: {
-      counter: 0,
-      when: -1000,
-      done: false,
-    },
     largeCard: {
       text: "",
-      dd: false,
       visible: false,
     },
+    ddSplash: false,
     videoCard: {
       link: "",
-      visible: false,
     },
     cats: [
       {
